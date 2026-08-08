@@ -372,9 +372,30 @@ Responsable de almacenar cada concepto incluido dentro de la liquidación.
 
 Responsable de registrar los pagos efectuados por la empresa.
 
-31\. Principio Rector Final  
-La base de datos deberá ser capaz de reconstruir completamente la historia operativa, financiera y de confianza de cualquier usuario sin depender de lógica almacenada fuera de la base de datos.
+### **31\.roles
+- id_rol (PK)
+- nombre (Cliente | Asesor | Administrador | Superadministrador)
+- descripcion
+- nivel_privilegio (entero, para jerarquía)
 
+permisos
+- id_permiso (PK)
+- codigo (único, ej. EJECUTAR_REAPERTURA_PERIODO)
+- descripcion
+- dominio (referencia a los dominios de DA-034: Auth, Core, Operations, Pricing, Finance, Multilevel, Trust, IMF, Security, Notifications, Integrations, Admin, Audit)
+
+roles_permisos
+- id_rol (FK → roles)
+- id_permiso (FK → permisos)
+
+usuarios_roles
+- id_usuario (FK → usuarios)
+- id_rol (FK → roles)
+- fecha_asignacion
+- asignado_por (FK → usuarios, debe ser Superadministrador para asignar rol Administrador/Superadministrador)
+
+### **32\. Principio Rector Final  
+La base de datos deberá ser capaz de reconstruir completamente la historia operativa, financiera y de confianza de cualquier usuario sin depender de lógica almacenada fuera de la base de datos.
 Registro de Cambios  
 Versión	Cambio  
 1.0	Creación inicial
