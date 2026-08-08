@@ -303,6 +303,12 @@ Registra correcciones posteriores al cierre.
 
 **anular\_liquidacion()** 
 
+fn_usuario_tiene_permiso(id_usuario, codigo_permiso) → boolean
+Verifica si un usuario posee, mediante su(s) rol(es) asignado(s), el permiso solicitado. Debe usarse como base de las políticas RLS de tablas sensibles (financieras, configuración global, motores).
+
+fn_asignar_rol(id_usuario, id_rol, asignado_por) → void
+Encapsula la Regla RN-UR-001; rechaza la operación si `asignado_por` no tiene rol Superadministrador cuando el rol a asignar es Administrador o Superadministrador.
+
 16\. Principio Rector Final  
 Toda función deberá existir porque resuelve  
 una regla de negocio claramente identificada.
