@@ -39,24 +39,20 @@ Taxista.
 Mensajero.  
 Domiciliario.  
 Operador de motocarro.  
+
 Administrador
+Responsable de la operación diaria:
+Configuración operativa.
 
-Responsable de:
+Seguridad de primer nivel.
+Finanzas operativas (recargas, retiros, liquidaciones ordinarias).
 
-Seguridad.  
-Finanzas.  
-Auditoría.  
-Operación.
-
-\#\# Administrador
-
-Responsable de:
-
-\* Configuración.  
-\* Seguridad.  
-\* Auditoría.  
-\* Operación financiera.  
-\* Supervisión del sistema.
+Superadministrador
+Responsable del gobierno integral:
+Configuración global y motores del sistema.
+Seguridad avanzada, auditoría e integraciones.
+Finanzas extraordinarias: liquidaciones extraordinarias y reapertura de períodos.
+Supervisión y gestión de administradores.
 
 3\. Modalidades de Servicio
 
