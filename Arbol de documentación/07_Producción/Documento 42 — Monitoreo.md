@@ -515,6 +515,13 @@ Las métricas deberán utilizarse para optimizar la plataforma.
 La estrategia de monitoreo deberá crecer junto con el sistema.
 
 \--------------------------------------------------  
+54\. KPIs de Portales Administrativos
+\--------------------------------------------------
+Disponibilidad de React Administrador / Superadministrador.
+Tiempo de respuesta de endpoints exclusivos de Superadministrador (reapertura, liquidación extraordinaria).
+Intentos de acceso no autorizado a rutas administrativas (correlacionar con Documento 32 y Documento 42A).
+
+\--------------------------------------------------  
 55\. PRINCIPIO RECTOR FINAL  
 \--------------------------------------------------
 
