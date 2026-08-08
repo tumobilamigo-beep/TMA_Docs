@@ -396,6 +396,10 @@ Toda acción deberá considerarse crítica.
 
 No existirán excepciones.
 
+Este registro debe correlacionarse con:
+Documento 41A — Gestión de Releases y Versionamiento, para cambios desplegados por Superadministrador.
+Documento 32A — Gestión de Secretos y Credenciales, cuando la acción auditada involucre rotación o acceso a secretos.
+
 \--------------------------------------------------  
 35\. AUDITORÍA DE CAMBIOS MASIVOS  
 \--------------------------------------------------
