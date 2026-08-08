@@ -84,16 +84,16 @@ Cada asesor solo podrá emitir una contraoferta por servicio.
 
 D  
 Device Fingerprint
-
 Huella digital del dispositivo utilizada para identificar patrones de comportamiento y prevenir fraude.
+
+Device Registry
+Entidad de base de datos que registra y monitorea los dispositivos utilizados por los usuarios del ecosistema. Fuente principal de información para Trust Score, IMF, Motor Antifraude y Ciberseguridad. (Ver Documento 34).
 
 E  
 Ecosistema Comercial
-
 Conjunto de negocios, aliados y servicios integrados a Tu Mobil Amigo.
 
 Incluye:
-
 Comercios aliados.  
 Talleres aliados.  
 Supermercados aliados.  
@@ -101,8 +101,10 @@ Negocios propios futuros.
 Explorador
 
 Primera categoría de participación dentro del ecosistema.
-
 Representa usuarios con actividad inicial.
+
+ERP
+Sistema de Planificación de Recursos Empresariales. La arquitectura de Tu Mobil Amigo debe permitir su integración futura sin rediseño estructural (ver Documento 06 — DA-032).
 
 I  
 IMF
@@ -130,10 +132,11 @@ Mide el crecimiento y actividad de la red de referidos.
 
 L  
 Leyenda
-
 Máxima categoría de participación dentro del ecosistema.
-
 Representa usuarios con alta actividad y permanencia.
+
+Liquidación Extraordinaria
+Liquidación ejecutada fuera del ciclo mensual ordinario, visible y ejecutable únicamente por el Superadministrador (ver Documento 28, Documento 33A)
 
 M  
 Motor Antifraude
@@ -165,8 +168,10 @@ Proceso mediante el cual cliente y asesor acuerdan el valor final de un servicio
 
 P  
 Participación Mínima de Red
-
 Métrica utilizada por el IMF para validar que los beneficios provienen de actividad legítima.
+
+PSE
+Pagos Seguros en Línea. Pasarela de pago colombiana contemplada como una de las implementaciones posibles del PaymentAdapter (ver Documento 26).
 
 Q  
 QR de Usuario
@@ -178,59 +183,58 @@ Permite:
 Identificación.  
 Registro de servicios externos.  
 Trazabilidad.  
+
 R  
 Referido Nivel 1
-
 Usuario invitado directamente por otro usuario.
 
 También denominado:
-
 Padre  
 Referido Nivel 2
 
 Usuario invitado indirectamente.
-
 También denominado:
 
 Abuelo  
 Red Multinivel
 
 Estructura de crecimiento basada en referidos válidos.
-
 Inicialmente operará con dos niveles.
+
+RBAC
+Role-Based Access Control. Modelo de autorización oficial de los portales Administrador y Superadministrador (ver Documento 28).
+
+Reapertura de Período
+Operación que permite recalcular un período contable ya cerrado. Requiere justificación obligatoria y solo puede ser ejecutada por el Superadministrador (ver Documento 33A).
 
 S  
 Saldo Disponible
-
 Dinero utilizable dentro de una billetera.
 
 Score de Negociación
-
 Indicador que mide el comportamiento histórico del usuario durante procesos de negociación.
-
 Puede ampliar o restringir rangos permitidos de negociación.
-
 No altera el cálculo tarifario base.
 
 Servicio Digital
 
 Servicio generado desde la aplicación.
-
 Utiliza:
 
 Motor Tarifario.  
 Motor de Negociación.  
 Realtime.  
 Validaciones de seguridad.  
+
 Servicio Externo
-
 Servicio originado fuera de la plataforma y posteriormente registrado mediante QR.
-
 Genera actividad verificable dentro del ecosistema.
 
 Sistema Multinivel
-
 Mecanismo de distribución de beneficios basado en crecimiento y actividad de la red.
+
+Superadministrador
+Rol de máximo privilegio del ecosistema. Responsable del gobierno integral de la plataforma: administradores, parámetros globales, configuraciones financieras, integraciones, seguridad, auditoría y motores del sistema. Opera desde el portal React Superadministrador. Requiere doble factor de autenticación obligatorio (ver Documento 06 — DA-033, Documento 28, Documento 32).
 
 T  
 Trust Score
