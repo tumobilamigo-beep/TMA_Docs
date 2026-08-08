@@ -262,16 +262,20 @@ Todas las comisiones permanecerán acumuladas hasta el cierre mensual oficial.
 Estados permitidos:
 
 GENERADA
-
 PENDIENTE\_LIQUIDACION
-
 LIQUIDADA
-
 PENDIENTE\_PAGO
-
 PAGADA
-
 ANULADA
+
+## **26\. Supervisión Administrativa
+El Administrador podrá:
+Consultar árbol de referidos.
+Consultar comisiones acumuladas e históricos.
+El Superadministrador podrá adicionalmente:
+Ajustar manualmente comisiones ante disputas o eventos de fraude confirmado, dejando registro de auditoría obligatorio.
+Suspender la participación de un nodo de la red ante sospecha de estructura ficticia (ver Documento 15 — Motor Antifraude).
+Toda intervención administrativa sobre la red multinivel deberá registrarse conforme al Documento 35 — Auditoría y Trazabilidad, y nunca podrá alterar retroactivamente comisiones ya liberadas y auditadas.
 
 Versión	Cambio  
 1.0	Creación inicial
