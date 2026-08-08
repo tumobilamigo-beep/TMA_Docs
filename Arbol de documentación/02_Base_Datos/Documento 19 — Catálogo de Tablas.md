@@ -489,11 +489,26 @@ Controles antifraude
 Consumido por:
 
 Documento 13 — Trust Score
-
 Documento 15 — Motor Antifraude
-
 Documento 32 — Ciberseguridad
-
 Documento 34 — Gestión de Dispositivos
+
+Tabla: roles
+Propósito: Catálogo de niveles de privilegio del sistema (Cliente, Asesor, Administrador, Superadministrador).
+Responsable: Seguridad / Backend.
+Consumido por: Documento 28 (RBAC), Documento 03, Documento 35 (Auditoría).
+
+Tabla: permisos
+Propósito: Catálogo de capacidades granulares del sistema, organizadas por dominio (ver DA-034).
+Responsable: Seguridad / Backend.
+
+Tabla: roles_permisos
+Propósito: Asociación N:N entre roles y permisos.
+
+Tabla: usuarios_roles
+Propósito: Asignación de rol(es) a cada usuario, con trazabilidad de quién asignó el rol y cuándo.
+Reglas de negocio:
+RN-UR-001: Solo un Superadministrador podrá asignar el rol Administrador o Superadministrador a otro usuario.
+RN-UR-002: Toda asignación o revocación de rol deberá generar evento de auditoría (ver Documento 21 — Catálogo de Triggers).
 
 Fin del Documento 19 — Catálogo de Tablas
