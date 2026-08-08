@@ -663,7 +663,15 @@ POST
 
 con acceso restringido.
 
-# **38\. Principio Rector Final**
+# **38\. Endpoints Exclusivos de Superadministrador
+Los siguientes endpoints requieren rol Superadministrador (validado mediante fn_usuario_tiene_permiso — ver Documento 20):
+POST /admin/periodos/reapertura
+POST /admin/liquidaciones/extraordinaria
+PUT /admin/parametros-globales
+POST /admin/usuarios-administrativos
+Todo intento de acceso sin el permiso correspondiente deberá registrarse como evento de seguridad (ver Documento 32).
+
+# **39\. Principio Rector Final**
 
 > **Las APIs de Tu Mobil Amigo constituyen una capa segura, versionada y desacoplada de acceso al ecosistema. Su función es exponer capacidades de negocio sin revelar la implementación interna, garantizando seguridad, trazabilidad, escalabilidad y compatibilidad futura, mientras toda la lógica crítica permanece centralizada en PostgreSQL y sus motores especializados.**
 
