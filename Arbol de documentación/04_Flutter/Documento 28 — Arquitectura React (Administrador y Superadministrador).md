@@ -563,7 +563,7 @@ con:
 * Historial.
 
 \--------------------------------------------------  
-39\. PRINCIPIO RECTOR FINAL  
+40\. PRINCIPIO RECTOR FINAL  
 \--------------------------------------------------
 
 Los portales React serán responsables exclusivamente de la administración, gobierno, auditoría y supervisión del ecosistema Tu Mobil Amigo.
