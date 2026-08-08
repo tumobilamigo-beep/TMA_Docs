@@ -149,12 +149,16 @@ Robusto
 Escalable
 
 9\. Tecnologías Oficiales  
-Frontend  
-Flutter.  
-Dart.  
-Backend  
-Supabase.  
-Edge Functions.  
+Frontend Operativo (Cliente / Asesor)
+Flutter.
+Dart.
+Frontend Administrativo (Administrador / Superadministrador)
+React.
+Next.js.
+TypeScript.
+Backend
+Supabase.
+Edge Functions.
 PostgreSQL.  
 Realtime  
 Supabase Realtime.
@@ -170,6 +174,8 @@ Auditoría completa.
 Device Fingerprint.  
 Trust Score.  
 Motor Antifraude.
+
+Especialista React / TypeScript (Portales Administrativos).
 
 10\. Reglas de Base de Datos
 
