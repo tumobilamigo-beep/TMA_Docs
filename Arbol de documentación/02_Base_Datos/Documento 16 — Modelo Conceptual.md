@@ -331,10 +331,17 @@ Ninguna entidad deberá existir sin una justificación directa de negocio.
 25\. Entidad:
 
 Device\_registry
-
 y relación con:
 
 usuarios
+
+Entidad: Rol
+Descripción: representa un nivel de privilegio dentro del sistema (Cliente, Asesor, Administrador, Superadministrador).
+Relación: 1 usuario → 1 rol principal (mínimo); un usuario administrativo podrá tener permisos adicionales granulares.
+
+Entidad: Permiso
+Descripción: representa una capacidad específica del sistema (ej. "ejecutar_reapertura_periodo", "editar_parametros_globales").
+Relación: N permisos ↔ N roles (tabla de asociación).
 
 Registro de Cambios  
 Versión	Cambio  
