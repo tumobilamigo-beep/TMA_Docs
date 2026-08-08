@@ -487,7 +487,18 @@ Los procesos deberán respetar:
 La estrategia DevOps deberá evolucionar junto con el crecimiento de la plataforma.
 
 \--------------------------------------------------  
-56\. PRINCIPIO RECTOR FINAL  
+56\. Resumen de Componentes Desplegables  
+\--------------------------------------------------
+La infraestructura debe soportar el despliegue independiente de:
+Flutter Cliente.
+Flutter Asesor.
+React Administrador.
+React Superadministrador.
+Backend (Supabase / Edge Functions).
+El detalle completo de ambientes, versionamiento y pipelines por componente se encuentra en el Documento 40A (Infraestructura) y Documento 41A (Releases), los cuales deben considerarse la fuente autoritativa y prevalecer sobre este resumen en caso de conflicto.
+
+\--------------------------------------------------  
+57\. PRINCIPIO RECTOR FINAL  
 \--------------------------------------------------
 
 La operación tecnológica de Tu Mobil Amigo deberá ser automatizable, segura, escalable, auditable y recuperable, permitiendo que la plataforma evolucione durante años sin depender de procesos manuales o conocimientos individuales.  
