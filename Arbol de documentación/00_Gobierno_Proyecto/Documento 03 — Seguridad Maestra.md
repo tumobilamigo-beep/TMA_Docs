@@ -313,17 +313,20 @@ Actividad verificable.
 Maduración financiera.  
 Trust Score.  
 Motor Antifraude.  
-23\. Seguridad Operativa
 
-Los administradores deberán disponer de herramientas para:
-
-Suspender usuarios.  
-Suspender dispositivos.  
-Congelar beneficios.  
-Bloquear operaciones.  
+23. Seguridad Operativa
+Las herramientas de seguridad operativa se distribuyen según el nivel de privilegio (ver Documento 06 — DA-005 y Documento 28):
+Administrador podrá:
+Suspender usuarios.
+Suspender dispositivos.
+Bloquear operaciones puntuales.
 Auditar movimientos.
-
-Toda acción administrativa deberá quedar registrada.
+Superadministrador podrá adicionalmente:
+Congelar beneficios a nivel de billetera o de red.
+Ejecutar reapertura de períodos contables (con justificación obligatoria — ver Documento 33A).
+Ejecutar liquidaciones extraordinarias.
+Modificar parámetros globales de seguridad y motores del sistema.
+Toda acción administrativa, de cualquier nivel, deberá quedar registrada y ser atribuible de forma inequívoca al rol y al usuario que la ejecutó (ver Documento 35 — Auditoría de Superadministrador).
 
 24\. Seguridad de Infraestructura
 
