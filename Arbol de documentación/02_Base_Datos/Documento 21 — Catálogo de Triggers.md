@@ -533,6 +533,10 @@ trg\_liquidacion\_ejecutada
 
 trg\_liquidacion\_pagada
 
+trg_auditar_asignacion_rol
+Se dispara en cada INSERT/DELETE sobre usuarios_roles.
+Genera registro obligatorio en la tabla de auditoría (ver Documento 35) con: usuario afectado, rol, quién ejecutó el cambio, timestamp.
+
 # **16\. Principio Rector Final**
 
 > **Los triggers de Tu Mobil Amigo representan el mecanismo automático de sincronización entre dominios, no el lugar donde reside la lógica del negocio. Toda decisión funcional deberá implementarse mediante funciones especializadas, mientras que los triggers actuarán únicamente como detectores de eventos y orquestadores de la ejecución.**
