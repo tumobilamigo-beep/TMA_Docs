@@ -490,6 +490,16 @@ La operación deberá revisarse periódicamente para identificar mejoras.
 Los procesos operativos deberán evolucionar junto con la plataforma.
 
 \--------------------------------------------------  
+54\. Procedimiento Operativo: Reapertura de Período  
+\--------------------------------------------------
+1. El Superadministrador identifica la necesidad de reapertura y documenta la justificación.
+2. El sistema valida rol y bloquea si el usuario no es Superadministrador (ver Documento 39, CP-SA-003).
+3. El sistema registra evento de auditoría con justificación, período afectado y usuario ejecutor (ver Documento 35, Sección 34).
+4. Se ejecuta el recálculo (ver Documento 33A, Secciones 34-37).
+5. Se conserva evidencia del cierre anterior y del nuevo cierre, ambos accesibles desde el Centro de Liquidaciones (Documento 28, Sección 39).
+6. Se notifica a los administradores afectados por el recálculo.
+
+\--------------------------------------------------  
 55\. PRINCIPIO RECTOR FINAL  
 \--------------------------------------------------
 
