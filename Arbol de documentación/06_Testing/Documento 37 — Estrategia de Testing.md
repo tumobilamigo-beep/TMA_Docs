@@ -537,7 +537,12 @@ La estrategia deberá crecer junto con la plataforma.
 La estrategia podrá complementarse mediante documentos especializados de testing financiero, seguridad y rendimiento cuando la complejidad del proyecto lo requiera.
 
 \--------------------------------------------------  
-53\. PRINCIPIO RECTOR FINAL  
+53\. Testing de Portales React  
+\--------------------------------------------------
+Categoría de pruebas dedicada a Administrador/Superadministrador, complementaria al Documento 37A (que cubre específicamente seguridad y pentesting de estos portales). Debe incluir pruebas funcionales de RBAC: verificar que un Administrador no pueda acceder a funciones exclusivas de Superadministrador ni a la inversa mediante manipulación de rutas o payloads.
+
+\--------------------------------------------------  
+54\. PRINCIPIO RECTOR FINAL  
 \--------------------------------------------------
 
 La calidad de Tu Mobil Amigo deberá demostrarse mediante pruebas objetivas, repetibles y trazables, garantizando que cada módulo del sistema funcione correctamente antes de llegar a los usuarios o impactar procesos financieros, operativos y de seguridad.  
