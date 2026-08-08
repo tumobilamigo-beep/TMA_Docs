@@ -68,6 +68,7 @@ La base de datos oficial será:
 PostgreSQL  
 Estado  
 APROBADA  
+
 DA-004 — Metodología de Construcción  
 Decisión  
 El proyecto deberá construirse por fases.  
@@ -90,17 +91,77 @@ Producción
 Estado  
 APROBADA
 
-DA-005 — Roles del Sistema  
-Decisión  
-Existen únicamente tres roles oficiales.  
-Cliente  
-Solicita servicios.  
-Asesor  
-Presta servicios.  
-Administrador  
-Gestiona la plataforma.  
-Estado  
-APROBADA
+DA-005 — Modelo Oficial de Roles
+
+#### Contexto
+
+La plataforma requiere una separación estricta entre usuarios operativos, administrativos y estratégicos.
+
+Inicialmente se definieron tres roles.
+
+Posteriormente la evolución del proyecto hizo necesaria la incorporación de un cuarto rol con capacidades superiores de gobierno tecnológico y operativo.
+
+#### Decisión
+
+La plataforma operará oficialmente con cuatro roles:
+
+##### Cliente
+
+Usuario consumidor de servicios.
+
+Responsabilidades:
+
+* solicitar servicios;
+* negociar ofertas;
+* gestionar perfil;
+* participar en programas de cashback;
+* participar en red multinivel.
+
+##### Asesor
+
+Prestador de servicios.
+
+Responsabilidades:
+
+* recibir ofertas;
+* negociar servicios;
+* ejecutar servicios;
+* administrar disponibilidad.
+
+##### Administrador
+
+Responsable de la operación diaria.
+
+Responsabilidades:
+
+* gestión operativa;
+* soporte;
+* monitoreo;
+* validaciones;
+* conciliaciones autorizadas;
+* gestión de usuarios.
+
+##### Superadministrador
+
+Máxima autoridad funcional y tecnológica del sistema.
+
+Responsabilidades:
+
+* administración global;
+* gestión de configuraciones críticas;
+* gestión de infraestructura;
+* gestión de releases;
+* reapertura de períodos;
+* administración de secretos;
+* gestión de incidentes críticos;
+* control de seguridad;
+* aprobación de cambios estructurales.
+
+#### Consecuencias
+
+Toda implementación futura deberá respetar este modelo de cuatro roles.
+
+Cualquier ampliación requerirá una nueva ADR.
 
 DA-006 — Servicios Iniciales  
 Decisión  
@@ -341,6 +402,7 @@ Prevalecerá:
 Documentación aprobada  
 Estado  
 APROBADA  
+
 DA-028 — Incentivo por Programación  
 Decisión  
 Los servicios programados entre 2 y 12 horas de anticipación recibirán una redistribución de beneficios.  
@@ -490,10 +552,114 @@ La integración deberá realizarse mediante adaptadores desacoplados.
 ### **DA-033 — Separación Tecnológica Frontend**
 
 Las aplicaciones operativas (Cliente y Asesor) serán desarrolladas en Flutter.
-
 Los portales de gestión (Administrador y Superadministrador) serán desarrollados en React.
-
 La lógica de negocio permanecerá centralizada en Backend y PostgreSQL.
+
+### DA-034 — Arquitectura Híbrida Flutter + React
+
+#### Contexto
+
+Durante la evolución del proyecto se evaluaron múltiples alternativas para el desarrollo de interfaces.
+
+#### Decisión
+
+La plataforma adoptará una arquitectura híbrida:
+
+##### Flutter
+
+Aplicaciones:
+
+* Cliente;
+* Asesor.
+
+##### React
+
+Aplicaciones:
+
+* Administrador;
+* Superadministrador.
+
+#### Justificación
+
+Flutter ofrece una experiencia superior para usuarios móviles.
+
+React ofrece mayor productividad para herramientas administrativas.
+
+#### Consecuencias
+
+Toda documentación futura deberá asumir esta separación tecnológica.
+
+### DA-032 — Gestión Centralizada de Secretos
+
+#### Estado
+
+Aprobada
+
+#### Decisión
+
+Ninguna credencial, API Key, Secret, Token o cadena de conexión podrá almacenarse en código fuente.
+
+Toda información sensible deberá gestionarse mediante mecanismos seguros de almacenamiento.
+
+#### Consecuencias
+
+Se prohíbe:
+
+* hardcodear credenciales;
+* exponer secretos en repositorios;
+* almacenar tokens en frontend.
+
+Toda implementación deberá cumplir el Documento 32A.
+
+### DA-035 — Separación Formal de Ambientes
+
+#### Decisión
+
+La plataforma operará mediante ambientes independientes:
+
+* Desarrollo;
+* Staging;
+* Producción.
+
+#### Consecuencias
+
+No se permitirá despliegue directo desde desarrollo a producción.
+Toda liberación deberá seguir el flujo definido en los documentos 40A y 41A.
+
+### DA-036 — Cierre Financiero y Liquidación Mensual
+
+#### Decisión
+
+La plataforma realizará cierres financieros mensuales automáticos.
+
+El sistema generará:
+
+* liquidaciones;
+* conciliaciones;
+* reportes Excel oficiales.
+
+#### Consecuencias
+
+Toda funcionalidad financiera deberá respetar los procesos definidos en el Documento 33A.
+
+### DA-037 — Gestión Integral de Alertas e Incidentes
+
+#### Decisión
+
+Toda anomalía operacional, financiera, técnica o de seguridad deberá generar alertas clasificadas por severidad.
+
+Se adopta oficialmente el modelo:
+
+* SEV-1;
+* SEV-2;
+* SEV-3;
+* SEV-4.
+
+#### Consecuencias
+
+Toda plataforma deberá integrarse con el catálogo definido en el Documento 42A.
+
+
 
 Registro de Cambios  
 Fecha	Decisión	Estado  
