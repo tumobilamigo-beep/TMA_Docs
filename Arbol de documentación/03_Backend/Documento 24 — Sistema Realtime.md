@@ -668,7 +668,10 @@ La V1 operará mediante:
 
 ---
 
-# **34\. Principio Rector Final**
+# **34\. Catálogo de Eventos
+Los eventos operativos de negocio transmitidos por este canal (nuevos servicios, ofertas, contraofertas, cambios de estado) deben mantenerse alineados con el Documento 42A — Catálogo de Alertas e Incidentes en lo que respecta a nomenclatura y severidad, para evitar duplicidad de criterios entre eventos operativos y eventos de alerta/incidente.
+
+# **35\. Principio Rector Final**
 
 > **Realtime es un mecanismo de sincronización y distribución de eventos, no un motor de negocio. Toda decisión crítica permanece en PostgreSQL, mientras Realtime garantiza que clientes, asesores y administradores reciban información autorizada de forma instantánea, segura, auditable y escalable.**
 
