@@ -395,7 +395,15 @@ Toda recuperación deberá respetar:
 La arquitectura deberá permitir incorporar nuevos mecanismos de recuperación sin rediseños estructurales.
 
 \--------------------------------------------------  
-46\. PRINCIPIO RECTOR FINAL  
+46\. Contingencia del Portal Administrativo
+\--------------------------------------------------
+
+Ante indisponibilidad del portal React (Administrador/Superadministrador):
+Las operaciones críticas irreversibles (reapertura de período, liquidación extraordinaria) deberán quedar bloqueadas hasta el restablecimiento del portal — no existirá vía alterna de ejecución (ver Documento 40A para el plan de infraestructura de contingencia del frontend administrativo).
+Las operaciones de Cliente y Asesor (Flutter) no se ven afectadas por esta contingencia, al ser arquitecturas independientes.
+
+\--------------------------------------------------  
+47\. PRINCIPIO RECTOR FINAL  
 \--------------------------------------------------
 
 La continuidad operativa de Tu Mobil Amigo deberá garantizar que la plataforma pueda resistir, recuperarse y continuar operando frente a fallas tecnológicas, operativas o de seguridad, preservando siempre la integridad de la información, la estabilidad financiera y la confianza del ecosistema.  
