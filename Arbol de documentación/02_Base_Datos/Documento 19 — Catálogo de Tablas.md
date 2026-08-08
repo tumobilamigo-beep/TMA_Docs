@@ -36,7 +36,7 @@ Responsable
 Autenticación.  
 Dependencias  
 asesores  
-dispositivos  
+dispositivos  (device_registry)
 billeteras  
 trust\_score  
 ipa  
@@ -49,7 +49,7 @@ Responsable
 Operación.  
 Dependencias  
 usuarios  
-dispositivos  
+dispositivos  (device_registry)
 Descripción  
 Control de equipos autorizados.  
 Responsable  
