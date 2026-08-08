@@ -65,25 +65,27 @@ Los cambios internos de un módulo no deberán afectar otros módulos.
 
 ---
 
-# **3\. Arquitectura Base**
+# **3\. Arquitectura Base
+La plataforma estará compuesta por dos capas de frontend y un backend único:
 
-La plataforma estará compuesta por:
+Flutter Cliente     Flutter Asesor     React Administrador     React Superadministrador
+        │                  │                    │                        │
+        └──────────────────┴────────────────────┴────────────────────────┘
+                                       │
+                                       ▼
+                              Supabase Backend
+                                       │
+                    ┌──────────────────┼──────────────────┐
+                    ▼                  ▼                  ▼
+                  Base              Edge              Realtime
+                  Datos             Functions
+                                       │
+                                       ▼
+                             Servicios Externos
 
-Cliente APK Flutter  
-          │  
-          ▼  
- Supabase Backend  
-          │  
- ┌────────┼────────┐  
- ▼        ▼        ▼
-
-Base   Edge      Realtime  
-Datos  Functions  
-          │  
-          ▼  
-   Servicios Externos
-
----
+Los roles operativos (Cliente, Asesor) consumen la plataforma mediante Flutter.
+Los roles de gobierno (Administrador, Superadministrador) consumen la plataforma mediante portales web independientes en React (ver Documento 06 — DA-033, Documento 28).
+Toda lógica de negocio, financiera y de seguridad permanece centralizada en el Backend, independientemente del frontend de origen.
 
 # **4\. Componentes Principales**
 
@@ -106,6 +108,17 @@ Responsabilidades:
 * QR.
 
 ---
+
+## **Frontend Administrativo
+
+Tecnología oficial:
+React, Next.js, TypeScript.
+Responsabilidades:
+Administración de usuarios, asesores y servicios.
+Gestión financiera (recargas, retiros, liquidaciones).
+Configuración de parámetros del sistema (tarifas, programación, ofertas).
+Monitoreo, auditoría y supervisión del Motor Antifraude.
+Este componente no contiene lógica de negocio, financiera ni de seguridad crítica — toda decisión se ejecuta y valida en el Backend (ver Documento 28, Sección 3).
 
 ## **Backend**
 
@@ -170,12 +183,13 @@ La aplicación estará dividida en dominios independientes.
 ## **Dominio Usuarios**
 
 Responsable de:
-
-* Clientes.  
-* Asesores.  
-* Administradores.  
-* Perfil.  
-* Identidad.
+Clientes.
+Asesores.
+Administradores.
+Superadministradores.
+Perfil.
+Identidad.
+Roles y permisos (RBAC).
 
 ---
 
@@ -271,24 +285,23 @@ Responsable de:
 
 ## **APK Android**
 
-Canal principal.
+Canal principal para roles operativos (Cliente, Asesor).
+Toda funcionalidad nueva orientada a Cliente/Asesor deberá diseñarse primero para APK.
 
-Toda funcionalidad nueva deberá diseñarse primero para APK.
-
----
-
-## **Telegram**
-
-Canal complementario.
+## **Telegram
+Canal complementario para roles operativos.
 
 Responsabilidades:
-
-* Registro inicial.  
-* Recuperación de acceso.  
-* Gestión de dispositivos.  
-* Notificaciones críticas.
-
+Registro inicial.
+Recuperación de acceso.
+Gestión de dispositivos.
+Notificaciones críticas.
 Telegram no será el canal operativo principal.
+
+Portal Web (React)
+Canal exclusivo para roles de gobierno (Administrador, Superadministrador).
+No será utilizado por Cliente ni Asesor.
+Responsabilidades: administración, configuración, auditoría, monitoreo y supervisión (ver Documento 28).
 
 ---
 
