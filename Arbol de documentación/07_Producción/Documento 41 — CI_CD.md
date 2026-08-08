@@ -511,7 +511,19 @@ La estrategia deberá soportar crecimiento del equipo.
 El pipeline deberá evolucionar junto con la plataforma.
 
 \--------------------------------------------------  
-53\. PRINCIPIO RECTOR FINAL  
+53\. Resumen de Componentes Desplegables  
+\--------------------------------------------------
+
+La infraestructura debe soportar el despliegue independiente de:
+Flutter Cliente.
+Flutter Asesor.
+React Administrador.
+React Superadministrador.
+Backend (Supabase / Edge Functions).
+El detalle completo de ambientes, versionamiento y pipelines por componente se encuentra en el Documento 40A (Infraestructura) y Documento 41A (Releases), los cuales deben considerarse la fuente autoritativa y prevalecer sobre este resumen en caso de conflicto.
+
+\--------------------------------------------------  
+54\. PRINCIPIO RECTOR FINAL  
 \--------------------------------------------------
 
 Todo cambio en Tu Mobil Amigo deberá atravesar un proceso automatizado de validación, seguridad, trazabilidad y despliegue controlado antes de impactar usuarios o procesos financieros.  
