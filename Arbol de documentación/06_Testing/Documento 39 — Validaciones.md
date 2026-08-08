@@ -499,7 +499,15 @@ Toda regla de negocio deberá asociarse a:
 \- resultado.
 
 \--------------------------------------------------  
-50\. PRINCIPIO RECTOR FINAL  
+50\. Validaciones de Operaciones Superadministrativas  
+\--------------------------------------------------
+Verificar:
+Rol del ejecutor antes de permitir reapertura o liquidación extraordinaria.
+Justificación obligatoria no vacía en toda reapertura.
+Integridad del período: un período ya reabierto y recalculado no podrá reabrirse nuevamente sin nueva justificación independiente.
+
+\--------------------------------------------------  
+51\. PRINCIPIO RECTOR FINAL  
 \--------------------------------------------------
 
 Toda operación ejecutada dentro de Tu Mobil Amigo deberá cumplir previamente las validaciones funcionales, operativas, financieras, legales y de seguridad definidas por la arquitectura, garantizando integridad, trazabilidad y protección del ecosistema.  
