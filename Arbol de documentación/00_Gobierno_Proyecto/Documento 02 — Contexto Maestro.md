@@ -67,40 +67,42 @@ Servicios proyectados:
 
 Motocarro.  
 Carga liviana.  
+
 6\. Roles del Ecosistema
 
-Actualmente existen únicamente tres roles oficiales.
-
+Existen cuatro roles oficiales.
 Cliente
-
 Solicita servicios.
-
 Puede:
-
-Negociar servicios.  
-Generar historial.  
-Acumular beneficios.  
-Participar en la red.  
+Negociar servicios.
+Generar historial.
+Acumular beneficios.
+Participar en la red.
 Asesor
-
 Prestador de servicios.
-
 Puede operar como:
-
-Mototaxista.  
-Taxista.  
-Mensajero.  
-Domiciliario.  
-Operador de motocarro.  
+Mototaxista.
+Taxista.
+Mensajero.
+Domiciliario.
+Operador de motocarro.
 Administrador
+Responsable de la operación diaria de la plataforma:
+Gestión de usuarios y asesores.
+Servicios, recargas y retiros.
+Liquidaciones ordinarias.
+Soporte y reportes.
+No puede modificar motores financieros, Trust, IMF, Antifraude ni parámetros globales.
+Superadministrador
+Responsable del gobierno integral del ecosistema:
+Gestión de administradores.
+Parámetros globales y configuraciones financieras.
+Integraciones y seguridad.
+Auditoría completa.
+Motores del sistema (Tarifario, Antifraude, Trust, IMF).
+Único rol habilitado para liquidaciones extraordinarias y reapertura de períodos contables.
+Cliente y Asesor operan desde Flutter. Administrador y Superadministrador operan desde portales web independientes en React (ver Documento 06 — DA-033 y Documento 28).
 
-Responsable de:
-
-Configuración.  
-Auditoría.  
-Seguridad.  
-Operación financiera.  
-Monitoreo.  
 7\. Filosofía del Sistema
 
 La plataforma no busca controlar el mercado.
@@ -345,20 +347,3 @@ Trazabilidad
 Sostenibilidad Financiera
 
 Fin del Documento 02 — Contexto Maestro
-
-El siguiente documento a construir es:
-
-Documento 03 — Seguridad Maestra
-
-y probablemente sea uno de los más importantes de todo el proyecto, porque ahí consolidaremos:
-
-Trust Score.  
-Motor Antifraude.  
-Device Fingerprint.  
-Multicuentas.  
-Simulación de servicios.  
-Lavado de activos.  
-Manipulación de cashback.  
-Manipulación de red multinivel.  
-Seguridad financiera.  
-Seguridad operacional.
