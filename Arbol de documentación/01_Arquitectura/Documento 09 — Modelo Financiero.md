@@ -499,6 +499,8 @@ Entre ellos:
 * ajustes contables;  
 * conciliaciones.
 
+Los procedimientos de conciliación, cierre contable, liquidación manual y reapertura de período que operacionalizan este modelo financiero se encuentran desarrollados en detalle en el Documento 33A — Conciliación Financiera y Cierre Contable, el cual debe considerarse extensión obligatoria de este documento para efectos de implementación.
+
 ### **32\. Liquidaciones Ordinarias y Extraordinarias**
 
 El sistema soportará:
