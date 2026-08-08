@@ -514,7 +514,11 @@ Todo nuevo módulo deberá cumplir:
 
 ---
 
-# **21\. Principio Rector Final**
+# **21\.El Backend reconoce explícitamente los dominios "Admin" y "Audit" como parte del Modular Monolith (ver Documento 06 — DA-034), responsables respectivamente de:
+Admin: operaciones exclusivas de Administrador/Superadministrador (gestión de usuarios administrativos, parámetros globales, liquidaciones extraordinarias).
+Audit: generación y consulta de trazas de auditoría transversales a todos los dominios.
+
+# **22\. Principio Rector Final**
 
 > **El Backend de Tu Mobil Amigo constituye la capa de orquestación del ecosistema. Su misión es coordinar clientes, servicios externos y motores internos sin asumir reglas de negocio, preservando que todas las decisiones críticas permanezcan centralizadas en PostgreSQL, garantizando consistencia, seguridad, escalabilidad y una evolución tecnológica sostenible.**
 
