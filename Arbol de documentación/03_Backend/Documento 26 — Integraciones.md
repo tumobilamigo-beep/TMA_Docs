@@ -535,7 +535,26 @@ La arquitectura deberá permitir agregar nuevos proveedores sin rediseñar:
 
 ---
 
-# **33\. Principio Rector Final**
+# **33\ Integración ERP
+Objetivo:
+Exportación de liquidaciones, pagos, cashback y comisiones hacia sistemas contables externos (ver Documento 06 — DA-032, Documento 09 — Sección 31).
+[N+1]. Estrategia ERP
+Fase Inicial:
+Exportación manual mediante reportes (Excel/CSV) generados desde el portal Superadministrador (ver Documento 28, Sección 34).
+Fase de Crecimiento:
+Integración directa mediante adaptador `ERPAdapter`, siguiendo el mismo principio de abstracción ya aplicado a `PSEAdapter` y `MapAdapter`.
+[N+2]. Abstracción ERP
+Interfaz:
+ERPAdapter
+Implementaciones posibles:
+Siigo
+Alegra
+Odoo
+SAP Business One
+World Office
+(ver Documento 28, Sección 30 — ERP Futuro, para el listado ya aprobado de proveedores candidatos)
+
+# **34\. Principio Rector Final**
 
 > **Toda integración de Tu Mobil Amigo deberá implementarse mediante capas de abstracción desacopladas, configurables y seguras, garantizando que ningún proveedor externo tenga dependencia estructural sobre la plataforma y permitiendo la evolución tecnológica sin afectar la operación, la seguridad ni las reglas del negocio.**
 
