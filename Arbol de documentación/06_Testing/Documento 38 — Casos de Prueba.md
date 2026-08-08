@@ -787,7 +787,27 @@ Todo requisito deberá vincularse con:
 Toda ejecución deberá generar evidencia auditable.
 
 \--------------------------------------------------  
-30\. PRINCIPIO RECTOR FINAL  
+30\. CP-SA-001:  
+\--------------------------------------------------
+ Superadministrador ejecuta reapertura de período con justificación → período recalculado, evidencia conservada, evento auditado.
+ 
+\--------------------------------------------------  
+31\. CP-SA-002:  
+\-------------------------------------------------- 
+Superadministrador intenta reapertura sin justificación → operación rechazada.
+
+\--------------------------------------------------  
+32\. CP-SA-003:  
+\--------------------------------------------------
+Administrador intenta ejecutar reapertura de período → operación rechazada por falta de permiso (403).
+
+\--------------------------------------------------  
+33\. CP-SA-004:  
+\--------------------------------------------------
+Superadministrador ejecuta liquidación extraordinaria → visible solo para Superadministrador, registrada en Centro de Liquidaciones (ver Documento 28, Sección 39).
+
+\--------------------------------------------------  
+34\. PRINCIPIO RECTOR FINAL  
 \--------------------------------------------------
 
 Ninguna funcionalidad de Tu Mobil Amigo podrá considerarse aprobada hasta que los casos de prueba asociados hayan sido ejecutados, documentados y validados satisfactoriamente.  
