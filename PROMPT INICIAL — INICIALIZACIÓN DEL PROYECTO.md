@@ -38,7 +38,7 @@ https://github.com/tumobilamigo-beep/TMA_Docs/tree/0e5fba4369e155968e40a41a71ee3
 
 \#\#\# FUENTE 03 — GOBIERNO DEL PROYECTO
 
-\[PEGAR AQUÍ EL LINK DIRECTO A LA CARPETA 00\_Gobierno\_Proyecto\]
+https://github.com/tumobilamigo-beep/TMA_Docs/tree/a8ab05166c5afb51d7200ae85819d5a53e76cfb2/Arbol%20de%20documentaci%C3%B3n/00_Gobierno_Proyecto
 
 \#\#\# FUENTE 04 — CÓDIGO DEL PROYECTO
 
