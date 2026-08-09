@@ -30,7 +30,7 @@ Cuando cualquier instrucción posterior haga referencia a una fuente, utiliza el
 
 \#\#\# FUENTE 01 — PROMPTS UNIVERSALES
 
-\[PEGAR AQUÍ EL LINK DEL REPOSITORIO O CARPETA DE PROMPTS UNIVERSALES\]
+https://github.com/tumobilamigo-beep/TMA_Docs/tree/8a290598e5ad2a5d65873396312da39c541a3628/Promts%20Universales
 
 \#\#\# FUENTE 02 — ÁRBOL DE DOCUMENTACIÓN
 
