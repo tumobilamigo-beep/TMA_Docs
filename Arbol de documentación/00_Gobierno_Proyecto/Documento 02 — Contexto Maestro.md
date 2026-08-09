@@ -22,6 +22,7 @@ Clientes.
 Asesores.  
 Empresa.  
 Ecosistema comercial futuro.  
+
 3\. Problemas que Resuelve  
 Para el Cliente  
 Dificultad para conseguir transporte confiable.  
@@ -38,6 +39,7 @@ Crear un ecosistema escalable.
 Construir una red comercial propia.  
 Generar sostenibilidad financiera.  
 Reducir fraude y abuso.  
+
 4\. Ciudad de Lanzamiento
 
 La primera ciudad de operación será:
@@ -71,6 +73,7 @@ Carga liviana.
 6\. Roles del Ecosistema
 
 Existen cuatro roles oficiales.
+
 Cliente
 Solicita servicios.
 Puede:
@@ -78,6 +81,7 @@ Negociar servicios.
 Generar historial.
 Acumular beneficios.
 Participar en la red.
+
 Asesor
 Prestador de servicios.
 Puede operar como:
@@ -86,6 +90,7 @@ Taxista.
 Mensajero.
 Domiciliario.
 Operador de motocarro.
+
 Administrador
 Responsable de la operación diaria de la plataforma:
 Gestión de usuarios y asesores.
@@ -93,6 +98,7 @@ Servicios, recargas y retiros.
 Liquidaciones ordinarias.
 Soporte y reportes.
 No puede modificar motores financieros, Trust, IMF, Antifraude ni parámetros globales.
+
 Superadministrador
 Responsable del gobierno integral del ecosistema:
 Gestión de administradores.
