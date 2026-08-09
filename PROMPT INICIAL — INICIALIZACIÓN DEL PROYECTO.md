@@ -46,7 +46,7 @@ https://github.com/tumobilamigo-beep/TMA_Docs/tree/a8ab05166c5afb51d7200ae85819d
 
 \#\#\# FUENTE 05 — CONTEXTO
 
-\[PEGAR AQUÍ EL LINK DE LA CARPETA O UBICACIÓN DE CONTEXTO, SI CORRESPONDE\]
+https://github.com/tumobilamigo-beep/TMA_Docs/tree/0256136bcc0d78524f0461d6e993a64b2f4c0aaa/CONTEXTO
 
 \#\#\# FUENTE 06 — OTRAS FUENTES
 
