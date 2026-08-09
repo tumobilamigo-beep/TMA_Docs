@@ -1,0 +1,792 @@
+# PROMPT UNIVERSAL 04 — CONTINUIDAD Y GESTIÓN DE `CURRENT.md` E HISTORIAL
+
+## PROPÓSITO
+
+Este prompt define cómo utilizar `CURRENT.md` y el HISTORIAL para conservar y recuperar la continuidad de un proyecto entre diferentes sesiones de trabajo o diferentes chats de IA.
+
+El sistema utiliza cinco fuentes con funciones diferentes:
+
+> GitHub → fuente de verdad
+
+> Documentación → cómo debe funcionar
+
+> Código → cómo funciona realmente
+
+> `CURRENT.md` → dónde quedamos
+
+> Historial → por qué llegamos hasta ahí
+
+Ninguna de estas fuentes sustituye a las demás.
+
+La continuidad correcta surge de combinarlas según corresponda.
+
+---
+
+# 1. FUNCIÓN DE `CURRENT.md`
+
+`CURRENT.md` es el punto de reanudación del proyecto.
+
+Su función principal es responder:
+
+> ¿DÓNDE QUEDAMOS?
+
+Debe proporcionar una visión rápida y actualizada del estado de trabajo.
+
+Una nueva sesión debe poder utilizarlo para identificar rápidamente:
+
+- qué se estaba haciendo;
+- qué se terminó;
+- qué está en progreso;
+- qué está pendiente;
+- qué problemas existen;
+- cuál fue el último trabajo realizado;
+- cuál es el siguiente paso;
+- qué decisiones recientes deben conocerse;
+- qué información adicional es necesaria para continuar.
+
+`CURRENT.md` representa el PRESENTE del trabajo.
+
+---
+
+# 2. FUNCIÓN DEL HISTORIAL
+
+El HISTORIAL conserva la memoria de las sesiones anteriores.
+
+Su función principal es responder:
+
+> ¿POR QUÉ LLEGAMOS HASTA AQUÍ?
+
+Cada sesión debe conservar su propio documento de historial.
+
+Los documentos anteriores NO deben eliminarse ni sobrescribirse.
+
+El historial permite conocer:
+
+- qué se pretendía hacer;
+- desde qué estado se comenzó;
+- qué se hizo;
+- qué se descubrió;
+- qué problemas aparecieron;
+- qué soluciones se aplicaron;
+- qué decisiones se tomaron;
+- qué cambios se realizaron;
+- qué alternativas fueron descartadas;
+- qué contradicciones se detectaron;
+- qué información quedó pendiente de verificar;
+- qué consecuencias tuvieron las decisiones;
+- cómo terminó la sesión.
+
+El HISTORIAL representa la EVOLUCIÓN del trabajo.
+
+---
+
+# 3. DIFERENCIA ENTRE `CURRENT.md` E HISTORIAL
+
+No mezcles sus funciones.
+
+`CURRENT.md` responde:
+
+> ¿Dónde estamos ahora?
+
+HISTORIAL responde:
+
+> ¿Cómo llegamos hasta aquí?
+
+Por lo tanto:
+
+`CURRENT.md`
+
+→ debe ser compacto.
+
+→ representa el estado actual.
+
+→ se actualiza.
+
+→ existe un único `CURRENT.md` vigente por proyecto.
+
+HISTORIAL
+
+→ conserva las sesiones anteriores.
+
+→ cada sesión genera un nuevo documento.
+
+→ no se sobrescriben los registros anteriores.
+
+---
+
+# 4. ESTRUCTURA DE CONTINUIDAD
+
+La continuidad debe entenderse de la siguiente manera:
+
+```text
+                    PROYECTO
+                       │
+        ┌──────────────┼──────────────┐
+        │              │              │
+        ▼              ▼              ▼
+  DOCUMENTACIÓN      CÓDIGO        HISTORIAL
+  Cómo debería       Cómo          Por qué
+  funcionar          funciona     llegamos
+        │              │              │
+        └──────────────┼──────────────┘
+                       │
+                       ▼
+                  CURRENT.md
+                       │
+                       ▼
+                DÓNDE QUEDAMOS
+
+CURRENT.md no contiene todo el conocimiento del proyecto.
+
+Funciona como el punto desde el cual se reconstruye el contexto necesario.
+
+5. AL INICIAR UNA NUEVA SESIÓN
+
+Cuando comiences una nueva sesión:
+
+Paso 1
+
+Localiza CURRENT.md.
+
+Paso 2
+
+Léelo completamente.
+
+Paso 3
+
+Identifica:
+
+Estado actual.
+Último trabajo realizado.
+Resultado.
+Pendientes.
+Bloqueos.
+Próximo paso.
+Advertencias.
+Decisiones recientes.
+Contexto de continuidad.
+Referencias de continuidad.
+Paso 4
+
+Determina qué información adicional necesita la tarea actual.
+
+Paso 5
+
+Consulta la documentación relevante.
+
+Paso 6
+
+Consulta el código relevante cuando sea necesario conocer el estado real de implementación.
+
+Paso 7
+
+Consulta el historial relevante cuando sea necesario comprender:
+
+una decisión;
+un cambio;
+un problema;
+una solución;
+una contradicción;
+una evolución del proyecto.
+
+No es necesario leer todo el historial si la información disponible ya permite continuar correctamente.
+
+6. ORDEN DE RECONSTRUCCIÓN DEL CONTEXTO
+
+Cuando sea necesario reconstruir el contexto de una nueva sesión utiliza preferentemente este flujo:
+
+CURRENT.md
+    ↓
+¿Dónde quedamos?
+    ↓
+Documentación relevante
+    ↓
+¿Cómo debería funcionar?
+    ↓
+Código relevante
+    ↓
+¿Cómo funciona realmente?
+    ↓
+Historial relevante
+    ↓
+¿Por qué llegamos hasta aquí?
+    ↓
+CONTEXTO ACTUAL
+
+Este flujo no significa que siempre debas consultar todas las fuentes.
+
+Consulta únicamente las necesarias para resolver correctamente la tarea.
+
+7. NO CONFIAR CIEGAMENTE EN CURRENT.md
+
+CURRENT.md puede quedar desactualizado.
+
+Por ello no debes asumir automáticamente que todo su contenido continúa siendo cierto.
+
+Cuando una afirmación sea importante para el trabajo actual, verifica según corresponda:
+
+Estado de implementación
+
+→ Código.
+
+Funcionamiento esperado
+
+→ Documentación.
+
+Razón de una decisión
+
+→ Historial.
+
+Estado de continuidad
+
+→ CURRENT.md.
+
+Si existe una contradicción, no la ocultes.
+
+8. DETECCIÓN DE INFORMACIÓN DESACTUALIZADA
+
+Si encuentras diferencias entre las fuentes, identifica primero qué está ocurriendo.
+
+Por ejemplo:
+
+CURRENT dice:
+
+Funcionalidad pendiente.
+
+Código indica:
+
+Funcionalidad implementada.
+
+No asumas inmediatamente que el código está equivocado.
+
+Puede significar:
+
+CURRENT.md quedó desactualizado;
+el código cambió después;
+existe una implementación parcial;
+hubo una decisión posterior;
+existe una contradicción.
+
+De igual manera:
+
+Si CURRENT.md indica que algo está terminado pero el código no permite verificarlo:
+
+identifica la diferencia.
+
+Si CURRENT.md describe una tarea diferente a la indicada por el historial más reciente:
+
+identifica la diferencia.
+
+No corrijas silenciosamente una contradicción importante.
+
+9. ESTADOS DE LAS TAREAS
+
+Cuando sea necesario interpretar el estado de una tarea utiliza estados claros:
+
+PENDIENTE
+
+Todavía no se ha completado.
+
+EN PROGRESO
+
+Existe trabajo activo sobre la tarea.
+
+BLOQUEADO
+
+No puede continuar hasta resolver una dependencia o problema.
+
+COMPLETADO
+
+La tarea ha sido finalizada.
+
+VERIFICADO
+
+La tarea ha sido finalizada y existe evidencia suficiente de que funciona correctamente.
+
+REQUIERE REVISIÓN
+
+La información disponible no permite determinar con seguridad su estado actual.
+
+No cambies el estado de una tarea únicamente por inferencia.
+
+10. CONTENIDO CONCEPTUAL DE CURRENT.md
+
+Cuando el proyecto no establezca otro formato, CURRENT.md debe poder expresar conceptualmente:
+
+CURRENT
+Estado actual
+
+[Situación actual]
+
+Último trabajo realizado
+
+[Qué se hizo]
+
+Resultado
+
+[Qué se consiguió]
+
+Pendientes
+
+[Qué falta]
+
+Bloqueos
+
+[Problemas que impiden continuar]
+
+Próximo paso
+
+[Acción siguiente]
+
+Advertencias
+
+[Información importante]
+
+Decisiones recientes
+
+[Decisiones relevantes]
+
+Contexto de continuidad
+
+[Información mínima adicional necesaria para comprender el estado actual y continuar]
+
+Referencias de continuidad
+
+[Referencias directas a documentación, código, historial u otros recursos relacionados]
+
+Este formato es conceptual.
+
+Si el proyecto establece una estructura específica para CURRENT.md, debes respetarla.
+
+No debes reemplazar arbitrariamente una estructura existente.
+
+11. CURRENT.md DEBE SER COMPACTO
+
+No conviertas CURRENT.md en:
+
+documentación completa;
+especificaciones;
+copia del código;
+copia de la conversación;
+copia del historial;
+base de conocimiento completa.
+
+Debe contener únicamente la información necesaria para recuperar rápidamente la continuidad.
+
+Su función es ser un:
+
+PUNTO DE REANUDACIÓN
+
+12. CONTENIDO CONCEPTUAL DEL HISTORIAL
+
+Cuando el proyecto no establezca otro formato, cada documento individual del HISTORIAL debe poder expresar conceptualmente:
+
+HISTORIAL — [Identificador o fecha de la sesión]
+Objetivo de la sesión
+
+[Qué se pretendía conseguir]
+
+Estado inicial
+
+[Situación del proyecto al comenzar]
+
+Trabajo realizado
+
+[Qué se hizo realmente durante la sesión]
+
+Descubrimientos
+
+[Información nueva descubierta]
+
+Problemas encontrados
+
+[Problemas, errores o dificultades encontradas]
+
+Soluciones
+
+[Soluciones que realmente fueron aplicadas]
+
+Decisiones
+
+[Decisiones tomadas durante la sesión]
+
+Cambios realizados
+
+[Modificaciones realizadas realmente]
+
+Alternativas consideradas y descartadas
+
+[Alternativas evaluadas y posteriormente descartadas]
+
+Contradicciones detectadas
+
+[Contradicciones encontradas]
+
+Información pendiente de verificación
+
+[Información que todavía no puede considerarse confirmada]
+
+Consecuencias para el proyecto
+
+[Impacto de los cambios y decisiones]
+
+Estado final de la sesión
+
+[Situación del proyecto al terminar]
+
+Referencias
+
+[Documentación, código, CURRENT u otros recursos relacionados]
+
+Este formato es conceptual.
+
+Si el proyecto establece una estructura específica para el historial, debes respetarla.
+
+13. CADA SESIÓN GENERA UN NUEVO HISTORIAL
+
+El historial funciona como un registro acumulativo.
+
+Al finalizar una sesión:
+
+Sesión 1 → historial 001
+Sesión 2 → historial 002
+Sesión 3 → historial 003
+Sesión 4 → historial 004
+
+Los documentos anteriores deben conservarse.
+
+No sobrescribas el historial anterior.
+
+El nombre exacto de los archivos dependerá de la estructura definida por el proyecto.
+
+Cuando sea posible, utiliza una identificación que permita ordenar las sesiones, por ejemplo:
+
+2026-08-09_001.md
+2026-08-09_002.md
+2026-08-10_001.md
+
+No inventes nombres o rutas si el proyecto ya establece una convención diferente.
+
+14. CURRENT.md SE ACTUALIZA
+
+A diferencia del historial:
+
+CURRENT.md no genera una copia nueva por cada sesión.
+
+Existe un único archivo vigente.
+
+La evolución conceptual es:
+
+CURRENT anterior
+       +
+cambios reales de la sesión
+       ↓
+CURRENT actualizado
+
+Debe conservar información anterior que continúe siendo válida y actualizar únicamente aquello que haya cambiado.
+
+15. AL FINALIZAR UNA SESIÓN
+
+Cuando una sesión termine, la información que deba conservarse debe permitir reconstruir:
+
+¿QUÉ ESTÁBAMOS HACIENDO?
+        ↓
+¿CUÁL ERA EL ESTADO INICIAL?
+        ↓
+¿QUÉ SE HIZO?
+        ↓
+¿QUÉ SE DESCUBRIÓ?
+        ↓
+¿QUÉ PROBLEMAS APARECIERON?
+        ↓
+¿QUÉ SOLUCIONES SE APLICARON?
+        ↓
+¿QUÉ DECISIONES SE TOMARON?
+        ↓
+¿QUÉ CAMBIÓ?
+        ↓
+¿QUÉ RESULTADO SE OBTUVO?
+        ↓
+¿QUÉ QUEDÓ PENDIENTE?
+        ↓
+¿CUÁL ES EL ESTADO FINAL?
+        ↓
+¿CUÁL ES EL SIGUIENTE PASO?
+
+Esta información debe distribuirse correctamente entre:
+
+CURRENT.md
+
+y
+
+el nuevo documento de HISTORIAL.
+
+No debe almacenarse todo indiscriminadamente en CURRENT.md.
+
+16. INFORMACIÓN NO VERIFICADA
+
+No registres como hechos:
+
+suposiciones;
+hipótesis;
+funcionalidades no verificadas;
+decisiones no aprobadas;
+tareas solamente propuestas;
+resultados que no hayan sido comprobados.
+
+Cuando algo no esté confirmado:
+
+indícalo como:
+
+NO VERIFICADO
+
+PENDIENTE DE CONFIRMACIÓN
+
+o
+
+REQUIERE REVISIÓN
+
+según corresponda.
+
+17. REQUISITO VS TAREA DE IMPLEMENTACIÓN
+
+La documentación describe cómo debería funcionar el proyecto.
+
+Una tarea de implementación describe trabajo necesario para construirlo.
+
+No conviertas automáticamente una tarea pendiente en un requisito permanente.
+
+Debe distinguirse entre:
+
+REQUISITO
+
+y
+
+TAREA DE IMPLEMENTACIÓN.
+
+18. RELACIÓN CON EL CÓDIGO
+
+El código representa el estado real de implementación.
+
+Cuando exista una diferencia entre código y documentación:
+
+no asumas automáticamente cuál de los dos está equivocado.
+
+Determina si:
+
+existe una implementación diferente;
+la documentación está desactualizada;
+el código está incompleto;
+hubo una decisión posterior;
+existe una contradicción.
+
+Cuando la contradicción sea relevante para continuar:
+
+regístrala y solicita verificación cuando corresponda.
+
+19. CUANDO EL ESTADO NO ESTÉ CLARO
+
+Si CURRENT.md no permite determinar claramente dónde quedó el proyecto:
+
+reconstruye la información utilizando:
+
+CURRENT.md;
+documentación relevante;
+código relevante;
+historial relevante.
+
+Determina el estado que pueda verificarse.
+
+Si todavía existe incertidumbre:
+
+declárala explícitamente.
+
+No inventes una continuidad inexistente.
+
+20. ACTUALIZACIÓN DE CURRENT.md
+
+Cuando se produzca un cambio significativo, CURRENT.md debe reflejarlo cuando corresponda.
+
+Ejemplos:
+
+finalización de una funcionalidad;
+inicio de una nueva etapa;
+cambio importante de arquitectura;
+resolución de un bloqueo;
+aparición de un bloqueo;
+modificación importante de requisitos;
+cambio de estrategia;
+descubrimiento relevante;
+cambio importante en el código.
+
+La actualización debe representar el estado real, no simplemente repetir lo ocurrido en la conversación.
+
+21. HISTORIAL Y RAZONES DE LAS DECISIONES
+
+Cuando una decisión tenga consecuencias importantes, el historial debe conservar:
+
+qué se decidió;
+qué alternativas fueron consideradas;
+por qué se eligió una alternativa cuando esa información esté disponible;
+qué consecuencias produjo.
+
+No es necesario trasladar toda esa explicación a CURRENT.md.
+
+CURRENT.md solo necesita conservar la decisión si continúa siendo relevante para el estado actual.
+
+22. NO BORRAR INFORMACIÓN HISTÓRICA
+
+No elimines información de un historial anterior solamente porque ya no sea válida actualmente.
+
+La información histórica debe conservarse para poder reconstruir la evolución del proyecto.
+
+Si una decisión posterior reemplazó una anterior:
+
+registra la nueva situación en el historial correspondiente.
+
+El CURRENT.md debe representar el estado vigente.
+
+El historial conserva la evolución.
+
+23. REFERENCIAS DE CONTINUIDAD
+
+Cuando sea útil, CURRENT.md puede incluir referencias directas a:
+
+documentación;
+código;
+historial;
+archivos;
+módulos;
+decisiones relacionadas.
+
+Estas referencias sirven para indicar dónde consultar información adicional.
+
+No copies el contenido de esas fuentes dentro de CURRENT.md.
+
+No inventes rutas.
+
+24. EFICIENCIA EN LA RECUPERACIÓN DE CONTEXTO
+
+No leas indiscriminadamente toda la documentación ni todo el historial.
+
+Utiliza primero:
+
+CURRENT
+   ↓
+identificar tarea actual
+   ↓
+buscar documentación relevante
+   ↓
+buscar código relevante
+   ↓
+consultar historial relevante
+
+El historial debe consultarse de manera selectiva cuando sea suficiente para comprender las decisiones o problemas relacionados con la tarea actual.
+
+25. RECONSTRUCCIÓN FINAL DEL CONTEXTO
+
+Antes de comenzar trabajo importante en una nueva sesión debes poder establecer:
+
+Estado esperado
+
+¿Cómo debería funcionar?
+
+→ Documentación.
+
+Estado real
+
+¿Cómo funciona actualmente?
+
+→ Código.
+
+Estado de trabajo
+
+¿Dónde quedó el trabajo?
+
+→ CURRENT.md.
+
+Evolución
+
+¿Por qué se llegó a este estado?
+
+→ Historial.
+
+Fuente de verdad
+
+¿Cuál es la fuente oficial del proyecto?
+
+→ GitHub.
+
+Una vez combinadas estas fuentes:
+
+GitHub
+   +
+Documentación
+   +
+Código
+   +
+CURRENT
+   +
+Historial
+   ↓
+CONTEXTO DE TRABAJO
+26. PRINCIPIO FINAL
+
+Recuerda siempre:
+
+GitHub → fuente de verdad
+
+Documentación → cómo debe funcionar
+
+Código → cómo funciona realmente
+
+CURRENT.md → dónde quedamos
+
+Historial → por qué llegamos hasta ahí
+
+Y recuerda especialmente:
+
+CURRENT.md NO es el historial.
+
+El HISTORIAL NO es CURRENT.md.
+
+CURRENT.md mantiene el presente.
+
+El HISTORIAL conserva la evolución.
+
+La documentación define el comportamiento esperado.
+
+El código demuestra el comportamiento real.
+
+GitHub conserva la fuente oficial del proyecto.
+
+La combinación de todas estas fuentes permite que una nueva sesión continúe el proyecto sin depender de la conversación anterior.
+
+OBJETIVO FINAL
+
+Que una nueva IA pueda entrar a un proyecto, reconstruir el contexto necesario y continuar el trabajo correctamente sin asumir información no verificada ni perder las decisiones importantes que llevaron al estado actual.
+
+
+### Qué cambió respecto al Universal 04 anterior
+
+La modificación importante no es simplemente "agregar historial". Ahora el sistema tiene **dos mecanismos de memoria claramente separados**:
+
+```text
+                  MEMORIA DEL PROYECTO
+                         │
+             ┌───────────┴───────────┐
+             │                       │
+             ▼                       ▼
+        CURRENT.md                HISTORIAL
+        ──────────                ─────────
+        Presente                 Evolución
+        1 archivo                muchos archivos
+        Se actualiza             Se conserva
+        ¿Dónde?                  ¿Por qué?
+             │                       │
+             └───────────┬───────────┘
+                         ▼
+                  NUEVO CHAT
+                         │
+                         ▼
+                 CONTEXTO RECUPERADO
