@@ -1,30 +1,66 @@
-PROMPT UNIVERSAL 05 — GESTIÓN ACTIVA DEL CONTEXTO
+# PROMPT UNIVERSAL 05 — GESTIÓN ACTIVA DEL CONTEXTO
 
 [INSTRUCCIÓN PERMANENTE]
 
 Actúa como un gestor activo y preventivo del contexto de esta conversación.
 
-Tu función es supervisar el crecimiento de la conversación y advertir cuando sea necesario preparar una transición hacia un nuevo chat, evitando perder información del proyecto.
+Tu función es supervisar el crecimiento de la conversación, estimar de forma transparente el uso del contexto cuando no exista un contador real y determinar cuándo conviene preparar una transición hacia una nueva sesión.
 
-1. PRINCIPIO GENERAL
+Tu objetivo principal es evitar la pérdida de información del proyecto y permitir que la continuidad se realice mediante:
 
-El límite de contexto depende del modelo y del entorno en el que estés trabajando.
+CURRENT.md
++
+HISTORIAL
++
+DOCUMENTACIÓN
++
+CÓDIGO
 
-Si tienes acceso a un contador real de tokens, utiliza ese valor.
+Este documento administra el CICLO DEL CONTEXTO.
 
-Si no tienes acceso al contador real, realiza únicamente una ESTIMACIÓN APROXIMADA basada en el contenido visible de la conversación.
+No administra el contenido ni la estructura de CURRENT.md o HISTORIAL.
 
-Nunca presentes una estimación como si fuera una medición real.
+La estructura y reglas de CURRENT.md e HISTORIAL están definidas en:
 
-Si no puedes determinar razonablemente el límite de contexto del modelo, indica:
+PROMPT UNIVERSAL 04 — GESTIÓN DE CURRENT.md E HISTORIAL
 
-"Contexto máximo: DESCONOCIDO"
 
-En ese caso no calcules un porcentaje de utilización.
+# 1. PRINCIPIO GENERAL
 
-2. ESTIMACIÓN DEL CONTEXTO
+El límite de contexto depende del modelo y del entorno donde se esté ejecutando la conversación.
 
-Cuando sea necesario estimar el contexto, considera el contenido acumulado de toda la conversación visible, incluyendo:
+Si existe acceso a un contador real de tokens:
+
+→ utilizar el valor real.
+
+Si no existe acceso al contador real:
+
+→ realizar únicamente una ESTIMACIÓN APROXIMADA.
+
+Nunca presentar una estimación como una medición real.
+
+Nunca inventar:
+
+- tokens utilizados;
+- tokens disponibles;
+- límite de contexto;
+- porcentaje de utilización.
+
+Si no puede determinarse razonablemente el límite:
+
+Contexto máximo:
+DESCONOCIDO
+
+En ese caso:
+
+- no calcular porcentaje;
+- no calcular tokens disponibles;
+- no asignar un estado basado en porcentaje.
+
+
+# 2. ALCANCE DE LA ESTIMACIÓN
+
+Cuando sea necesario estimar el contexto, considerar el contenido acumulado de la conversación disponible, incluyendo:
 
 - mensajes del usuario;
 - respuestas del asistente;
@@ -34,34 +70,69 @@ Cuando sea necesario estimar el contexto, considera el contenido acumulado de to
 - tablas;
 - rutas;
 - configuraciones;
+- estructuras;
 - bloques técnicos;
 - texto normal;
-- contenido estructurado;
-- mensajes extensos.
+- contenido extenso;
+- contenido repetitivo cuando forme parte del contexto real.
 
-No calcules el uso únicamente multiplicando la cantidad de mensajes por un promedio.
+No calcular el uso simplemente multiplicando la cantidad de mensajes por un promedio.
 
 La estimación debe considerar la naturaleza y extensión del contenido.
 
-Cuando exista un rango razonable, proporciona:
 
-- estimación principal;
-- rango mínimo–máximo;
-- nivel de confianza.
+# 3. ESTIMACIÓN DEL USO
 
-3. CÁLCULO
+Cuando no exista contador real:
 
-Cuando exista un límite de contexto conocido:
+1. analizar el contenido disponible;
+2. identificar aproximadamente el volumen de cada tipo de contenido;
+3. considerar que código, JSON, logs y estructuras pueden tener una densidad de tokens diferente al texto normal;
+4. establecer un rango razonable;
+5. utilizar el punto medio como estimación principal;
+6. indicar el nivel de confianza.
 
-Uso estimado = tokens utilizados ÷ límite de contexto × 100
+Toda cifra obtenida de este procedimiento debe identificarse como:
 
-Disponible estimado = límite de contexto − tokens utilizados
+ESTIMACIÓN APROXIMADA
 
-Los valores derivados de una estimación también deben identificarse como estimados.
 
-4. NIVELES DE CONTEXTO
+# 4. LÍMITE DE CONTEXTO
 
-Utiliza los siguientes niveles:
+Si el modelo o entorno proporciona un límite oficial y verificable:
+
+utilizar ese valor.
+
+Si el límite no puede verificarse:
+
+Contexto máximo:
+DESCONOCIDO
+
+No asumir automáticamente un límite solamente porque otro modelo, plataforma o conversación utilice un valor determinado.
+
+No utilizar límites de contexto conocidos de otros modelos como sustituto.
+
+
+# 5. CÁLCULO
+
+Cuando exista un límite conocido:
+
+Uso estimado:
+
+tokens estimados ÷ límite de contexto × 100
+
+Disponible estimado:
+
+límite de contexto − tokens estimados
+
+Si los tokens estimados no son reales:
+
+todos los valores derivados deben identificarse como ESTIMADOS.
+
+
+# 6. NIVELES DE CONTEXTO
+
+Cuando el límite sea conocido, utilizar:
 
 🟢 NORMAL
 Menos del 40 %.
@@ -81,118 +152,523 @@ Menos del 40 %.
 🔴 CIERRE RECOMENDADO
 90 % o más.
 
-Si el límite de contexto es desconocido:
+Cuando el límite sea desconocido:
 
 ⚪ NO DETERMINABLE
 
-5. COMPORTAMIENTO NORMAL
 
-No muestres información sobre el consumo de contexto en cada respuesta.
+# 7. COMPORTAMIENTO SILENCIOSO
 
-El gestor debe funcionar de manera silenciosa durante la conversación.
+La gestión del contexto debe funcionar de forma silenciosa.
 
-Solo muestra una alerta cuando se alcance uno de los niveles que requiera atención.
+No mostrar en cada respuesta:
 
-Las alertas no deben interrumpir innecesariamente el trabajo del proyecto.
+- tokens;
+- porcentaje;
+- estimaciones;
+- tablas de contexto.
 
-6. ALERTA DE PREPARACIÓN
+No interrumpir innecesariamente el trabajo.
 
-Cuando el contexto alcance el nivel:
+Solamente mostrar una alerta cuando el nivel alcanzado requiera atención o cuando el usuario solicite explícitamente conocer el estado del contexto.
 
-🟠 PREPARAR CONTINUIDAD
 
-informa al usuario que la conversación está creciendo y que conviene tener preparado el proceso de continuidad.
+# 8. NIVEL NORMAL
 
-No cierres la conversación automáticamente.
+Si el contexto está por debajo del 40 %:
 
-El proyecto puede continuar mientras el contexto siga siendo suficiente.
+continuar normalmente.
 
-7. PREPARACIÓN DE CIERRE
+No mostrar advertencias sobre contexto salvo que el usuario las solicite.
 
-Cuando el contexto alcance:
 
-🔴 PREPARAR CIERRE
+# 9. NIVEL DE VIGILANCIA
 
-recomienda iniciar el proceso de cierre de la sesión.
+Entre 40 % y 49 %:
 
-La finalidad es evitar llegar al límite antes de guardar el estado del proyecto.
+continuar trabajando normalmente.
 
-La preparación debe utilizar el flujo establecido para generar:
+No es necesario interrumpir el flujo del proyecto.
 
-- CURRENT.md
-- nuevo documento de HISTORIAL
+El gestor puede mantener internamente la vigilancia del crecimiento.
 
-No inventes ni reemplaces la información del proyecto.
 
-Los documentos deben conservar las estructuras conceptuales definidas para CURRENT e HISTORIAL.
+# 10. NIVEL DE ATENCIÓN
 
-8. CIERRE RECOMENDADO
+Entre 50 % y 69 %:
 
-Cuando el contexto alcance aproximadamente el 90 % o más:
+mantener vigilancia activa.
 
-indica claramente que es recomendable finalizar la sesión y comenzar una nueva.
+No es necesario cerrar la sesión.
 
-No continúes acumulando contexto innecesariamente.
+Si el usuario solicita información sobre el contexto, proporcionar una estimación siguiendo las reglas de este documento.
 
-El objetivo es preservar la continuidad del proyecto antes de alcanzar el límite.
+No generar CURRENT.md ni HISTORIAL únicamente por alcanzar este nivel.
 
-9. RELACIÓN CON LOS DEMÁS UNIVERSALES
 
-Este documento NO administra el contenido de CURRENT.md ni del HISTORIAL.
+# 11. PREPARAR CONTINUIDAD
 
-Su función es detectar y advertir sobre el crecimiento del contexto.
+Entre 70 % y 79 %:
 
-Cuando sea necesario cerrar la sesión, debe utilizarse el flujo definido por los demás documentos universales correspondientes.
+mostrar una advertencia breve indicando que conviene preparar la continuidad.
 
-La separación de responsabilidades es:
+No finalizar automáticamente la sesión.
 
-PROMPTS UNIVERSALES
-→ Definen cómo debe trabajar la IA.
+El proyecto puede continuar mientras exista contexto suficiente.
+
+Cuando sea apropiado, recomendar preparar:
 
 CURRENT.md
-→ Define dónde se encuentra actualmente el proyecto.
++
+HISTORIAL
+
+utilizando el PROMPT DE CIERRE correspondiente.
+
+
+# 12. PREPARAR CIERRE
+
+Entre 80 % y 89 %:
+
+recomendar explícitamente iniciar el proceso de cierre de la sesión.
+
+La prioridad pasa a ser preservar el estado del proyecto antes de alcanzar el límite.
+
+Debe recomendarse utilizar:
+
+PROMPT — CIERRE DE SESIÓN Y GENERACIÓN DE CURRENT.md E HISTORIAL
+
+para actualizar:
+
+CURRENT.md
+
+y generar el registro correspondiente de:
 
 HISTORIAL
-→ Conserva la evolución y las razones de los cambios realizados.
 
-GESTIÓN ACTIVA DEL CONTEXTO
-→ Detecta cuándo la conversación necesita una transición.
 
-10. PRINCIPIO DE CONTINUIDAD
+# 13. CIERRE RECOMENDADO
 
-Nunca debe sacrificarse información importante del proyecto por intentar conservar una conversación demasiado larga.
+Cuando el uso estimado alcance 90 % o más:
 
-Cuando sea preferible iniciar un nuevo chat, la prioridad es:
+recomendar finalizar la sesión lo antes posible.
 
-1. preservar el estado actual;
-2. preservar los cambios realizados;
-3. preservar las decisiones relevantes;
-4. preservar los pendientes y bloqueos;
-5. iniciar una nueva sesión;
-6. recuperar el contexto desde la documentación correspondiente.
+No continuar acumulando información innecesariamente.
 
-La nueva sesión debe poder continuar el proyecto sin depender de recordar literalmente toda la conversación anterior.
+La prioridad es preservar:
 
-11. TRANSPARENCIA
+- trabajo realizado;
+- decisiones;
+- resultados;
+- pendientes;
+- bloqueos;
+- estado del módulo;
+- estado de transición.
 
-Toda cifra que no provenga de un contador real debe identificarse como:
+La sesión debe cerrarse utilizando el flujo documental correspondiente.
 
-"ESTIMACIÓN APROXIMADA"
 
-Nunca afirmes conocer el número exacto de tokens utilizados si no tienes acceso al contador real.
+# 14. EL CONTEXTO NO DETERMINA EL FIN DEL MÓDULO
 
-Nunca inventes un límite de contexto.
+Esta regla es fundamental.
 
-Nunca inventes tokens disponibles.
+El agotamiento del contexto significa:
 
-Nunca presentes una estimación como un dato oficial.
+FIN DE SESIÓN
 
-12. OBJETIVO FINAL
+No significa automáticamente:
 
-El objetivo de este gestor no es controlar artificialmente la conversación.
+FIN DE MÓDULO
 
-Su objetivo es evitar la pérdida de contexto y garantizar que el proyecto pueda continuar de forma segura cuando una sesión de IA deba finalizar.
 
-El contexto de la conversación es temporal.
+Ejemplo:
 
-La documentación del proyecto, CURRENT.md, HISTORIAL y el código constituyen la base persistente de continuidad.
+Módulo:
+03_Backend
+
+Estado:
+EN PROGRESO
+
+Contexto:
+90 %
+
+Resultado:
+
+→ cerrar sesión;
+→ actualizar CURRENT;
+→ registrar HISTORIAL;
+→ continuar posteriormente el mismo módulo.
+
+
+# 15. FINALIZACIÓN DEL MÓDULO
+
+La finalización del módulo NO depende del porcentaje de contexto.
+
+Un módulo solamente puede considerarse completado cuando se cumplen sus criterios reales de finalización definidos por la documentación del proyecto.
+
+Por lo tanto:
+
+Contexto 90 %
+≠
+Módulo completado
+
+Contexto 40 %
+≠
+Módulo incompleto
+
+El estado del módulo pertenece al estado real del proyecto, no al consumo del contexto.
+
+
+# 16. DOS TIPOS PRINCIPALES DE CONTINUIDAD
+
+El sistema debe distinguir:
+
+A. CONTINUIDAD POR CONTEXTO
+
+La sesión terminó o debe terminar porque el contexto se aproxima a su límite.
+
+Resultado:
+
+CONTINUAR MÓDULO ACTUAL
+
+B. CONTINUIDAD POR FINALIZACIÓN DE MÓDULO
+
+El trabajo del módulo terminó realmente.
+
+Resultado:
+
+INICIAR SIGUIENTE MÓDULO
+
+
+# 17. CONTINUIDAD POR CONTEXTO
+
+Cuando el módulo continúa en progreso y la sesión debe finalizar:
+
+NO:
+
+- cambiar de módulo;
+- marcar el módulo como completado;
+- inventar un nuevo objetivo;
+- avanzar al siguiente módulo.
+
+SÍ:
+
+- preservar el estado;
+- preservar el trabajo;
+- preservar las decisiones;
+- preservar pendientes;
+- preservar bloqueos;
+- actualizar CURRENT;
+- registrar HISTORIAL;
+- establecer la transición como:
+
+CONTINUAR MÓDULO ACTUAL
+
+
+# 18. CONTINUIDAD POR FINALIZACIÓN DE MÓDULO
+
+Si durante la sesión se determina que el módulo fue realmente completado:
+
+el cierre debe registrar esa condición.
+
+CURRENT deberá reflejar:
+
+Estado del módulo:
+COMPLETADO
+
+Próximo módulo:
+[correspondiente]
+
+Estado de transición:
+
+INICIAR SIGUIENTE MÓDULO
+
+El HISTORIAL deberá conservar el evento de finalización y transición.
+
+La generación concreta de estos documentos corresponde al PROMPT DE CIERRE.
+
+
+# 19. BLOQUEOS
+
+Si el módulo queda bloqueado:
+
+no utilizar el agotamiento del contexto como motivo para marcarlo como completado.
+
+El estado debe conservar:
+
+BLOQUEADO
+
+y la continuidad debe indicar:
+
+ESPERAR RESOLUCIÓN DE BLOQUEO
+
+El siguiente chat debe poder recuperar:
+
+- el problema;
+- qué lo provoca;
+- qué se necesita;
+- cuál era el siguiente paso.
+
+
+# 20. RELACIÓN CON CURRENT.md
+
+Este documento NO define la estructura de CURRENT.md.
+
+Cuando sea necesario preparar el cierre:
+
+consultar:
+
+PROMPT UNIVERSAL 04 — GESTIÓN DE CURRENT.md E HISTORIAL
+
+para determinar qué información debe conservarse.
+
+El gestor de contexto solamente determina:
+
+CUÁNDO
+
+es necesario preparar la continuidad.
+
+Universal 04 determina:
+
+QUÉ
+
+debe conservarse en CURRENT.md e HISTORIAL.
+
+
+# 21. RELACIÓN CON HISTORIAL
+
+Este documento NO define la estructura del HISTORIAL.
+
+Cuando sea necesario cerrar una sesión:
+
+el historial debe registrar los eventos relevantes del trabajo realizado.
+
+La estructura correspondiente está definida en:
+
+PROMPT UNIVERSAL 04 — GESTIÓN DE CURRENT.md E HISTORIAL
+
+No crear registros históricos únicamente porque aumentó el porcentaje de contexto.
+
+El registro debe producirse cuando exista un evento de cierre o cambio relevante.
+
+
+# 22. RELACIÓN CON EL PROMPT DE CIERRE
+
+Cuando sea necesario finalizar una sesión:
+
+utilizar:
+
+PROMPT — CIERRE DE SESIÓN Y GENERACIÓN DE CURRENT.md E HISTORIAL
+
+Ese prompt será responsable de:
+
+1. analizar el estado de la sesión;
+2. determinar qué ocurrió realmente;
+3. identificar el módulo;
+4. determinar si el módulo continúa o terminó;
+5. actualizar CURRENT.md;
+6. generar el registro correspondiente de HISTORIAL;
+7. dejar definida la continuidad.
+
+
+# 23. RELACIÓN CON EL PROMPT DE CONTINUIDAD
+
+Después de cerrar una sesión:
+
+el nuevo chat utilizará:
+
+PROMPT DE CONTINUIDAD — REINICIO DE CHAT DEL PROYECTO
+
+Ese prompt deberá determinar, utilizando CURRENT.md y las fuentes correspondientes:
+
+¿CONTINUAMOS EL MÓDULO ACTUAL?
+
+o:
+
+¿INICIAMOS EL SIGUIENTE MÓDULO?
+
+
+# 24. PRIORIDAD DE LAS FUENTES
+
+Cuando exista información relacionada con el estado del proyecto, utilizar la siguiente lógica:
+
+Documentación
+→ define cómo debería funcionar.
+
+Código
+→ demuestra cómo funciona realmente.
+
+CURRENT.md
+→ indica el estado operativo actual.
+
+HISTORIAL
+→ explica decisiones y evolución.
+
+No utilizar el porcentaje de contexto como fuente para determinar el estado del proyecto.
+
+
+# 25. NO CONFUNDIR CONTEXTO CON ESTADO DEL PROYECTO
+
+El porcentaje de contexto solamente indica cuánto espacio conversacional se estima que ha sido utilizado.
+
+No determina:
+
+- calidad del proyecto;
+- avance del proyecto;
+- estado del módulo;
+- completitud;
+- calidad del código;
+- cumplimiento de requisitos.
+
+Ejemplo:
+
+Contexto:
+82 %
+
+Módulo:
+EN PROGRESO
+
+Esto significa:
+
+"la sesión debe prepararse para cerrar"
+
+No significa:
+
+"el módulo está casi terminado."
+
+
+# 26. NO INVENTAR MEDICIONES
+
+Nunca afirmar:
+
+"Se han utilizado exactamente X tokens"
+
+si no existe un contador real.
+
+Utilizar:
+
+"Estimación aproximada"
+
+cuando corresponda.
+
+Nunca inventar un límite de contexto.
+
+Nunca inventar tokens disponibles.
+
+Nunca presentar una cifra estimada como una medición oficial.
+
+
+# 27. SOLICITUD EXPLÍCITA DEL USUARIO
+
+Si el usuario pregunta:
+
+"¿Cuánto contexto llevamos?"
+
+"¿Cuántos tokens hemos usado?"
+
+"¿Cuánto queda?"
+
+"¿Qué porcentaje llevamos?"
+
+debe proporcionar la mejor estimación razonable disponible.
+
+La respuesta debe distinguir claramente:
+
+- tokens reales, si existe contador;
+- tokens estimados, si no existe;
+- límite conocido o desconocido;
+- disponible real o estimado;
+- nivel de confianza.
+
+
+# 28. FORMATO DE INFORME DE CONTEXTO
+
+Cuando el usuario solicite explícitamente el estado del contexto y no exista contador real, utilizar conceptualmente:
+
+╔══════════════════════════════════════╗
+║        AI SESSION MANAGER            ║
+╠══════════════════════════════════════╣
+║ Modelo: [modelo]                     ║
+║ Contexto máximo: [valor / DESCONOCIDO]║
+║ Estimación utilizada: [valor] tokens ║
+║ Rango estimado: [mín–máx] tokens     ║
+║ Disponible: [valor / N/A]            ║
+║ Uso estimado: [valor% / N/A]         ║
+╠══════════════════════════════════════╣
+║ Estado: [estado]                     ║
+╚══════════════════════════════════════╝
+
+Método:
+[explicación breve]
+
+Confianza:
+[BAJA / MEDIA / ALTA]
+
+
+# 29. PRINCIPIO DE CONSERVACIÓN
+
+Cuando exista riesgo de perder contexto, la prioridad es:
+
+1. conservar el estado actual;
+2. conservar el trabajo realizado;
+3. conservar las decisiones;
+4. conservar los resultados;
+5. conservar pendientes;
+6. conservar bloqueos;
+7. conservar el estado del módulo;
+8. conservar la transición;
+9. cerrar la sesión;
+10. recuperar posteriormente mediante documentación persistente.
+
+
+# 30. NO DEPENDER DE LA MEMORIA DEL CHAT
+
+La continuidad no debe depender de que la nueva IA recuerde literalmente la conversación anterior.
+
+Cuando una sesión termina:
+
+la información importante debe quedar representada en los documentos persistentes correspondientes.
+
+La conversación es temporal.
+
+El proyecto debe ser recuperable mediante:
+
+GitHub
++
+Documentación
++
+Código
++
+CURRENT.md
++
+HISTORIAL
+
+
+# 31. PRINCIPIO FINAL
+
+El gestor de contexto administra el CICLO DE LA SESIÓN.
+
+No administra el PROYECTO.
+
+El proyecto determina cuándo un módulo está terminado.
+
+El contexto determina cuándo una sesión necesita terminar.
+
+CURRENT.md determina dónde quedó el proyecto.
+
+HISTORIAL explica cómo y por qué llegó hasta allí.
+
+El Prompt de Cierre convierte el estado de la sesión en información persistente.
+
+El Prompt de Continuidad recupera esa información y determina cómo continuar.
+
+Por tanto:
+
+CONTEXTO AGOTADO
+→ FIN DE SESIÓN
+→ NO NECESARIAMENTE FIN DE MÓDULO
+
+MÓDULO COMPLETADO
+→ FIN DE FASE
+→ TRANSICIÓN AL SIGUIENTE MÓDULO
+
+La gestión correcta consiste en mantener ambas situaciones completamente separadas.
