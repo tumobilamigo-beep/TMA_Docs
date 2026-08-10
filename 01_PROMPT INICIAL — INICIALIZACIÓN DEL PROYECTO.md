@@ -41,6 +41,8 @@ Cuando cualquier instrucción posterior haga referencia a una fuente, utiliza el
 
 \#\#\# FUENTE 01 — PROMPTS UNIVERSALES
 
+https://github.com/tumobilamigo-beep/TMA_Docs/tree/6812820673d9546821ab56abafdc5117678fa8c6/Promts%20Universales
+
 \#\#\# FUENTE 02 — ÁRBOL DE DOCUMENTACIÓN
 
 \#\#\# FUENTE 03 — GOBIERNO DEL PROYECTO
