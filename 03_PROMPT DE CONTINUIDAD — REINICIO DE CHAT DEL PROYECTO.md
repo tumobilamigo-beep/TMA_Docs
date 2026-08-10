@@ -153,6 +153,73 @@ Utilizar el siguiente orden:
 12. Comparar la información.
 13. Determinar el punto real de continuidad.
 
+# VERIFICACIÓN DE ACCESO DURANTE LA CONTINUIDAD
+
+Antes de reconstruir el contexto de la sesión anterior debes verificar que tienes acceso a las fuentes necesarias para continuar.
+
+Debes comprobar especialmente:
+
+- repositorio de código;
+- Árbol de Documentación;
+- `Gobierno_Proyecto`;
+- documentación del módulo actual;
+- `CURRENT.md`;
+- HISTORIAL relevante;
+- cualquier otro documento referenciado por CURRENT o HISTORIAL.
+
+Si alguno de estos recursos no está disponible, debes informarlo explícitamente antes de continuar.
+
+NO debes asumir que una fuente fue consultada simplemente porque aparece mencionada en `CURRENT.md`, HISTORIAL o en el prompt.
+
+Diferencia claramente entre:
+
+✅ ACCESIBLE
+→ puedes consultar directamente la fuente.
+
+⚠️ REFERENCIADO PERO NO ACCESIBLE
+→ sabes que existe porque otra fuente lo menciona, pero no puedes consultarlo.
+
+❌ NO ENCONTRADO
+→ no has podido localizarlo.
+
+⚠️ REQUIERE VERIFICACIÓN
+→ existe información relacionada, pero no puedes confirmar que corresponde a la versión vigente.
+
+
+## FORMATO DE REPORTE
+
+Si existe alguna fuente no accesible, informa:
+
+FUENTE:
+[Nombre]
+
+TIPO:
+[Repositorio / carpeta / documento / archivo]
+
+UBICACIÓN:
+[Ruta o enlace]
+
+ESTADO:
+[ACCESIBLE / REFERENCIADO PERO NO ACCESIBLE / NO ENCONTRADO / REQUIERE VERIFICACIÓN]
+
+IMPACTO:
+[Qué información no puede verificarse]
+
+ACCIÓN NECESARIA:
+[Qué debe proporcionar o habilitar el usuario]
+
+
+## REGLA DE CONTINUIDAD
+
+Si la fuente faltante es crítica para determinar correctamente el estado del proyecto:
+
+NO debes inventar el contexto faltante.
+
+Debes detener la parte del proceso que dependa de dicha fuente e informar al usuario.
+
+Si la fuente faltante NO es crítica para continuar:
+
+puedes continuar con las fuentes disponibles, pero debes indicar claramente qué información permanece sin verificar.
 
 # 6. CURRENT.md ES EL PUNTO DE ENTRADA
 
