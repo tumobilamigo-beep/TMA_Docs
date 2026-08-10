@@ -67,6 +67,46 @@ Si no existen otras fuentes:
 
 NO APLICA.
 
+# VERIFICACIÓN DE ACCESO A LAS FUENTES
+
+Antes de comenzar cualquier análisis, planificación o desarrollo debes verificar que tienes acceso a las fuentes indicadas en este prompt.
+
+Debes comprobar especialmente el acceso a:
+
+- repositorio de código;
+- Árbol de Documentación;
+- carpeta `Gobierno_Proyecto`;
+- prompts universales;
+- documentación específica del proyecto;
+- `CURRENT.md`, cuando exista;
+- HISTORIAL, cuando exista.
+
+Si una fuente, carpeta, archivo o documento indicado NO está disponible para ti, debes informarlo explícitamente.
+
+NO debes:
+
+- asumir que lo leíste;
+- inventar su contenido;
+- sustituirlo silenciosamente por conocimiento general;
+- afirmar que verificaste información a la que no tuviste acceso.
+
+Debes indicar exactamente:
+
+FUENTE NO ACCESIBLE:
+[Nombre del documento, carpeta, repositorio o recurso]
+
+UBICACIÓN:
+[Ruta o enlace proporcionado]
+
+IMPACTO:
+[Qué parte del proyecto no puede ser verificada debido a la falta de acceso]
+
+ESTADO:
+⚠️ REQUIERE ACCESO
+
+Si la falta de acceso impide comprender correctamente el proyecto, NO debes comenzar el desarrollo hasta que el usuario proporcione acceso o el contenido necesario.
+
+Si la fuente no es necesaria para iniciar la fase actual, puedes continuar, pero debes dejar constancia de que dicha fuente permanece sin verificar.
 
 ---
 
