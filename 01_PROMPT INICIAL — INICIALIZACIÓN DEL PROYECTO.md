@@ -41,29 +41,17 @@ Cuando cualquier instrucción posterior haga referencia a una fuente, utiliza el
 
 \#\#\# FUENTE 01 — PROMPTS UNIVERSALES
 
-https://github.com/tumobilamigo-beep/TMA_Docs/tree/21c747d0bb199489b968a637fcdd9f206c00120c/Promts%20Universales
-
 \#\#\# FUENTE 02 — ÁRBOL DE DOCUMENTACIÓN
-
-https://github.com/tumobilamigo-beep/TMA_Docs/tree/ce519351f9b58fd3209742e8d70e3b8793c6225e/Arbol%20de%20documentaci%C3%B3n
 
 \#\#\# FUENTE 03 — GOBIERNO DEL PROYECTO
 
-https://github.com/tumobilamigo-beep/TMA_Docs/tree/e3267b333a3826a08550b9799df7d4aeaf377ee9/Arbol%20de%20documentaci%C3%B3n/00_Gobierno_Proyecto
-
 \#\#\# FUENTE 04 — CÓDIGO DEL PROYECTO
-
-\[PEGAR AQUÍ EL LINK DEL REPOSITORIO DEL CÓDIGO\]
 
 \#\#\# FUENTE 05 — CONTEXTO
 
-https://github.com/tumobilamigo-beep/TMA_Docs/tree/149f6f31dcc4a65c7d18d93679812ffa479f03d0/CONTEXTO
-
 \#\#\# FUENTE 06 — OTRAS FUENTES
 
-\[AGREGAR AQUÍ OTRAS FUENTES NECESARIAS PARA ESTE PROYECTO\]
-
-Si no existen otras fuentes:
+Si no existen otras fuentes o no existe informacion:
 
 NO APLICA.
 
