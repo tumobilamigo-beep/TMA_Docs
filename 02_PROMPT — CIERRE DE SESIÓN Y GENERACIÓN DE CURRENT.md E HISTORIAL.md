@@ -1,457 +1,751 @@
-\# PROMPT — CIERRE DE SESIÓN Y GENERACIÓN DE CURRENT.md E HISTORIAL
+# PROMPT — CIERRE DE SESIÓN Y GENERACIÓN DE CURRENT.md E HISTORIAL
 
-\#\# OBJETIVO
+## PROPÓSITO
 
-La sesión actual de trabajo está finalizando.
+Este prompt se utiliza cuando una sesión de trabajo debe finalizar y es necesario preservar correctamente el estado del proyecto para una futura sesión.
 
-Analiza todo el trabajo realizado durante esta sesión y genera DOS documentos Markdown independientes:
+Puede utilizarse cuando:
 
-1\. \`CURRENT.md\`  
-2\. Un documento de historial correspondiente exclusivamente a esta sesión.
+- el contexto está próximo a agotarse;
+- el contexto se agotó;
+- se realiza un cierre preventivo;
+- se finalizó una sesión manualmente;
+- se completó un módulo;
+- se produjo un bloqueo;
+- se requiere preservar el estado antes de continuar en otro chat.
 
-Los dos documentos tienen funciones diferentes y deben conservar estructuras diferentes.
+Su función es convertir el estado REAL de la sesión en información persistente mediante:
 
-NO los mezcles.
+1. actualización de `CURRENT.md`;
+2. generación del registro correspondiente de `HISTORIAL`.
 
-\---
+La estructura y reglas de ambos documentos están definidas en:
 
-\# 1\. PRINCIPIO DEL SISTEMA
+PROMPT UNIVERSAL 04 — GESTIÓN DE CURRENT.md E HISTORIAL
 
-El proyecto utiliza el siguiente flujo de información:
+La gestión del consumo de contexto está definida en:
 
-GitHub → fuente de verdad
+PROMPT UNIVERSAL 05 — GESTIÓN ACTIVA DEL CONTEXTO
 
-Documentación → cómo debe funcionar
 
-Código → cómo funciona realmente
+# 1. PRINCIPIO FUNDAMENTAL
 
-CURRENT.md → dónde quedamos
+Antes de generar los documentos debes determinar qué ocurrió REALMENTE durante la sesión.
 
-Historial → por qué llegamos hasta ahí
+No debes generar documentos basándote únicamente en:
 
-Tu trabajo en este proceso es convertir el resultado real de esta sesión en:
+- la intención inicial;
+- planes que no fueron ejecutados;
+- propuestas;
+- suposiciones;
+- conversaciones hipotéticas.
 
-\- un estado actualizado y compacto para \`CURRENT.md\`;  
-\- un registro de la sesión para el historial.
+Debes distinguir entre:
 
-\---
+REALIZADO
+→ ocurrió realmente.
 
-\# 2\. REGLA FUNDAMENTAL: NO INVENTAR
+PROPUESTO
+→ fue sugerido pero no necesariamente implementado.
 
-Utiliza únicamente información que pueda determinarse a partir de:
-
-\- esta conversación;  
-\- la documentación consultada;  
-\- el código consultado;  
-\- CURRENT existente;  
-\- historial existente;  
-\- información explícitamente proporcionada durante la sesión.
-
-NO inventes:
-
-\- avances;  
-\- decisiones;  
-\- funcionalidades;  
-\- soluciones;  
-\- archivos;  
-\- estados;  
-\- resultados;  
-\- requisitos;  
-\- problemas.
-
-Distingue siempre entre:
-
-REALIZADO  
-→ ocurrió realmente durante la sesión.
-
-PROPUESTO  
-→ solamente fue sugerido.
-
-DECIDIDO  
+DECIDIDO
 → fue aceptado como decisión.
 
-DESCARTADO  
+DESCARTADO
 → fue considerado y rechazado.
 
-PENDIENTE  
-→ todavía no se ha realizado.
+PENDIENTE
+→ todavía no fue realizado.
 
-NO VERIFICADO  
-→ no existe evidencia suficiente para afirmarlo.
+NO VERIFICADO
+→ no existe evidencia suficiente.
 
-Nunca presentes una propuesta como si hubiera sido realizada.
 
-Nunca presentes una posibilidad como una decisión definitiva.
+# 2. FUENTES QUE DEBES UTILIZAR
 
-\---
+Para preparar el cierre utiliza, en el siguiente orden lógico:
 
-\# 3\. DOCUMENTO 1 — CURRENT.md
+1. conversación actual;
+2. documentación del proyecto relevante;
+3. código relevante;
+4. `CURRENT.md` existente;
+5. `HISTORIAL` relevante.
 
-Genera el documento \`CURRENT.md\`.
+La conversación permite identificar qué ocurrió durante la sesión.
 
-Debe utilizar EXACTAMENTE la siguiente estructura conceptual:
+La documentación determina cómo debería funcionar el proyecto.
 
-\# CURRENT
+El código determina cómo funciona realmente.
 
-\#\# Estado actual  
-\[Situación actual\]
+`CURRENT.md` determina dónde estaba el proyecto antes de esta sesión.
 
-\#\# Último trabajo realizado  
-\[Qué se hizo\]
+`HISTORIAL` permite comprender por qué llegó a ese estado.
 
-\#\# Resultado  
-\[Qué se consiguió\]
 
-\#\# Pendientes  
-\[Qué falta\]
+# 3. NO MODIFICAR LA FUENTE DE VERDAD
 
-\#\# Bloqueos  
-\[Problemas que impiden continuar\]
+Este prompt no debe modificar arbitrariamente:
 
-\#\# Próximo paso  
-\[Acción siguiente\]
+- documentación;
+- arquitectura;
+- requisitos;
+- código;
+- decisiones previamente establecidas.
 
-\#\# Advertencias  
-\[Información importante\]
+Si durante el análisis aparece una contradicción:
 
-\#\# Decisiones recientes  
-\[Decisiones relevantes\]
+1. identificarla;
+2. documentarla;
+3. no ocultarla;
+4. no inventar una resolución.
 
-\#\# Contexto de continuidad  
-\[Información mínima adicional necesaria para comprender el estado actual y continuar el proyecto\]
+La contradicción debe quedar registrada en HISTORIAL y, cuando afecte a la continuidad, reflejarse también en CURRENT.md.
 
-\#\# Referencias de continuidad  
-\[Referencias a documentación, código, CURRENT anterior, historial u otros recursos directamente relacionados, cuando corresponda\]
 
-\#\#\# REGLAS PARA CURRENT.md
+# 4. IDENTIFICAR EL MÓDULO
 
-\`CURRENT.md\` representa el estado actual del proyecto.
+Antes de generar los documentos determina:
 
-Debe ser:
+- proyecto;
+- módulo actual;
+- ruta del módulo dentro del Árbol de Documentación;
+- estado real del módulo.
 
-\- compacto;  
-\- preciso;  
-\- actualizado;  
-\- orientado a la continuidad;  
-\- fácil de leer por una nueva IA.
+Estados válidos por defecto:
 
-NO debe convertirse en:
+- NO INICIADO
+- EN PROGRESO
+- COMPLETADO
+- BLOQUEADO
 
-\- una copia de la conversación;  
-\- una copia de la documentación;  
-\- una copia del código;  
-\- una copia del historial;  
-\- una explicación extensa de todo el proyecto.
+No marcar un módulo como COMPLETADO únicamente porque esta sesión terminó.
 
-Su función es responder rápidamente:
 
-¿Dónde estamos?
+# 5. DETERMINAR EL TIPO DE CIERRE
 
-¿Qué se hizo?
+Determina cuál de las siguientes situaciones corresponde:
 
-¿Qué resultado produjo?
+- CONTEXTO AGOTADO
+- CIERRE PREVENTIVO
+- MÓDULO COMPLETADO
+- CIERRE MANUAL
+- BLOQUEO
+- CAMBIO DE SESIÓN
+- OTRO
 
-¿Qué falta?
+Si no existe evidencia suficiente:
 
-¿Qué bloquea?
+NO VERIFICADO
 
-¿Qué sigue?
 
-¿Qué decisiones recientes debo conocer?
+# 6. DIFERENCIAR SESIÓN Y MÓDULO
 
-¿Qué información adicional necesito para continuar correctamente?
+Esta distinción es obligatoria.
 
-¿Dónde puedo consultar la información relacionada?
+Una sesión puede terminar mientras el módulo continúa.
 
-\---
+Ejemplo:
 
-\# 4\. DOCUMENTO 2 — HISTORIAL
+Módulo:
+03_Backend
 
-Genera un documento Markdown independiente correspondiente a ESTA SESIÓN.
+Estado:
+EN PROGRESO
 
-Debe utilizar EXACTAMENTE la siguiente estructura conceptual:
+Motivo:
+CONTEXTO AGOTADO
 
-\# HISTORIAL — \[Identificador o fecha de la sesión\]
+Resultado:
 
-\#\# Objetivo de la sesión  
-\[Qué se pretendía conseguir\]
+La sesión termina.
 
-\#\# Estado inicial  
-\[Situación del proyecto al comenzar la sesión\]
+El módulo NO termina.
 
-\#\# Trabajo realizado  
-\[Qué se hizo realmente durante la sesión\]
+CURRENT debe establecer:
 
-\#\# Descubrimientos  
-\[Información nueva descubierta\]
+Estado del módulo:
+EN PROGRESO
 
-\#\# Problemas encontrados  
-\[Problemas, errores, dificultades o contradicciones encontradas\]
+Estado de transición:
+CONTINUAR MÓDULO ACTUAL
 
-\#\# Soluciones  
-\[Soluciones que realmente fueron aplicadas\]
 
-\#\# Decisiones  
-\[Decisiones tomadas durante la sesión\]
+# 7. DETERMINAR SI EL MÓDULO TERMINÓ
 
-\#\# Cambios realizados  
-\[Modificaciones realizadas realmente\]
+Antes de marcar un módulo como COMPLETADO debes verificar:
 
-\#\# Alternativas consideradas y descartadas  
-\[Alternativas relevantes que fueron evaluadas y posteriormente descartadas\]
+- criterios de finalización definidos por el proyecto;
+- trabajo requerido;
+- resultados obtenidos;
+- pruebas o verificaciones necesarias;
+- pendientes que puedan impedir considerar terminada la fase.
 
-\#\# Contradicciones detectadas  
-\[Contradicciones encontradas entre documentación, código, CURRENT, historial, requisitos o decisiones\]
+Si existen dudas:
 
-\#\# Información pendiente de verificación  
-\[Información que todavía no puede considerarse confirmada\]
+NO marcar como COMPLETADO.
 
-\#\# Consecuencias para el proyecto  
-\[Impacto de los cambios y decisiones realizados\]
 
-\#\# Estado final de la sesión  
-\[Situación del proyecto al terminar la sesión\]
+# 8. DETERMINAR LA TRANSICIÓN
 
-\#\# Referencias  
-\[Documentación, código, CURRENT, historial u otros recursos directamente relacionados\]
+Una vez determinado el estado real, establecer una de estas transiciones:
 
-\---
+CONTINUAR MÓDULO ACTUAL
 
-\# 5\. REGLAS PARA EL HISTORIAL
+INICIAR SIGUIENTE MÓDULO
 
-El historial registra lo ocurrido durante ESTA SESIÓN.
+ESPERAR RESOLUCIÓN DE BLOQUEO
 
-Debe permitir comprender posteriormente:
+REQUIERE VERIFICACIÓN
 
-\- qué se intentaba hacer;  
-\- desde qué estado se comenzó;  
-\- qué se hizo;  
-\- qué se descubrió;  
-\- qué problemas aparecieron;  
-\- cómo se solucionaron;  
-\- qué decisiones se tomaron;  
-\- qué cambios se realizaron;  
-\- qué alternativas fueron descartadas;  
-\- qué contradicciones aparecieron;  
-\- qué quedó sin verificar;  
-\- qué consecuencias tuvieron las decisiones;  
-\- con qué estado terminó la sesión.
 
-No conviertas el historial en un resumen genérico del proyecto.
+# 9. REGLA DE CONTINUIDAD POR CONTEXTO
 
-Registra únicamente información relevante producida durante esta sesión.
+Si el cierre se produce por contexto insuficiente:
 
-\---
+- conservar el módulo actual;
+- mantener su estado real;
+- registrar el trabajo realizado;
+- registrar el resultado;
+- registrar pendientes;
+- registrar bloqueos;
+- registrar el motivo del cierre;
+- establecer:
 
-\# 6\. CURRENT Y HISTORIAL DEBEN SER DIFERENTES
+Estado de transición:
+CONTINUAR MÓDULO ACTUAL
 
-No copies automáticamente el contenido de un documento en el otro.
+NO avanzar al siguiente módulo automáticamente.
 
-CURRENT responde:
 
-\> ¿DÓNDE ESTAMOS?
+# 10. REGLA DE FINALIZACIÓN DE MÓDULO
 
-HISTORIAL responde:
+Si el módulo fue realmente completado:
 
-\> ¿QUÉ OCURRIÓ Y POR QUÉ LLEGAMOS HASTA AQUÍ?
+- marcarlo como COMPLETADO;
+- registrar el resultado;
+- registrar decisiones;
+- registrar pendientes residuales;
+- identificar el siguiente módulo;
+- establecer:
 
-El historial puede contener información que ya no necesita aparecer en CURRENT.
+Estado de transición:
+INICIAR SIGUIENTE MÓDULO
 
-CURRENT puede contener información necesaria para continuar que no requiere una narración histórica extensa.
+El siguiente chat deberá ser informado de que corresponde iniciar la siguiente fase.
 
-\---
 
-\# 7\. ACTUALIZACIÓN DE CURRENT EXISTENTE
+# 11. REGLA DE BLOQUEO
 
-Si existe un \`CURRENT.md\` anterior:
+Si existe un bloqueo:
 
-1\. Léelo.  
-2\. Determina qué información continúa siendo válida.  
-3\. Determina qué información cambió durante esta sesión.  
-4\. Conserva lo que siga vigente.  
-5\. Actualiza únicamente lo que corresponda.
+- marcar el módulo como BLOQUEADO;
+- describir el problema;
+- explicar por qué impide continuar;
+- indicar qué se necesita para resolverlo;
+- conservar el módulo actual;
+- establecer:
 
-NO elimines información válida solamente porque no haya sido mencionada nuevamente durante esta sesión.
+Estado de transición:
+ESPERAR RESOLUCIÓN DE BLOQUEO
 
-El nuevo CURRENT debe representar:
 
-CURRENT ANTERIOR  
-\+  
-CAMBIOS REALES DE ESTA SESIÓN  
-\=  
+# 12. ACTUALIZACIÓN DE CURRENT.md
+
+Si existe un `CURRENT.md` anterior:
+
+NO debes crear automáticamente otro CURRENT.
+
+Debes actualizar el existente.
+
+Utiliza conceptualmente:
+
+CURRENT ANTERIOR
++
+CAMBIOS REALES DE LA SESIÓN
+=
 CURRENT ACTUALIZADO
 
-\---
 
-\# 8\. HISTORIAL NO DEBE BORRAR EL PASADO
+# 13. CONTENIDO DE CURRENT.md
 
-Si el proyecto utiliza documentos individuales de historial:
+La actualización debe respetar la estructura definida por:
 
-genera un nuevo documento correspondiente a esta sesión.
+PROMPT UNIVERSAL 04
 
-No reemplaces los documentos históricos anteriores.
+Como mínimo debe quedar determinado:
 
-No mezcles varias sesiones en un mismo documento salvo que la estructura del proyecto indique expresamente lo contrario.
+## Identificación del proyecto
+[Proyecto]
 
-\---
+## Estado general del proyecto
+[Estado actual]
 
-\# 9\. REFERENCIAS
+## Módulo / fase actual
+[Módulo]
 
-Cuando existan referencias directas a:
+## Estado del módulo
+[Estado]
 
-\- documentación;  
-\- código;  
-\- CURRENT;  
-\- historial;  
-\- archivos;  
-\- módulos;  
-\- decisiones;
+## Estado de la sesión actual
+[Estado]
 
-inclúyelas cuando sean útiles para continuar o verificar el trabajo.
+## Motivo del último cierre
+[Motivo]
 
-NO inventes rutas.
+## Último trabajo realizado
+[Trabajo real]
 
-Si una referencia no puede determinarse con seguridad, no la inventes.
+## Resultado obtenido
+[Resultado]
 
-\---
+## Pendientes
+[Pendientes]
 
-\# 10\. INFORMACIÓN NO EXISTENTE
+## Bloqueos
+[Bloqueos]
 
-Si una sección no aplica a esta sesión, utiliza:
+## Decisiones recientes
+[Decisiones]
 
-\> Ninguno.
+## Advertencias
+[Advertencias]
+
+## Próximo paso
+[Acción concreta]
+
+## Próximo módulo
+[Si corresponde]
+
+## Estado de transición
+[Transición]
+
+## Referencias de continuidad
+[Fuentes necesarias]
+
+
+# 14. REGLA DE ACTUALIDAD DE CURRENT
+
+CURRENT.md representa el estado actual.
+
+Por lo tanto:
+
+- actualizar información que cambió;
+- eliminar estados que ya no sean vigentes;
+- conservar información que siga siendo válida;
+- no acumular cronológicamente eventos antiguos.
+
+La información histórica pertenece a HISTORIAL.
+
+
+# 15. GENERACIÓN DEL HISTORIAL
+
+Al finalizar una sesión debe generarse el registro histórico correspondiente cuando exista un evento relevante de cierre.
+
+No sobrescribir registros históricos anteriores.
+
+El nuevo registro debe conservarse según la estructura documental definida por el proyecto.
+
+
+# 16. CONTENIDO DEL HISTORIAL
+
+El registro deberá respetar la estructura definida en:
+
+PROMPT UNIVERSAL 04 — GESTIÓN DE CURRENT.md E HISTORIAL
+
+Debe registrar, cuando corresponda:
+
+## Objetivo de la sesión
+[Qué se pretendía conseguir]
+
+## Estado inicial
+[Situación al comenzar]
+
+## Módulo / fase
+[Módulo trabajado]
+
+## Trabajo realizado
+[Trabajo real]
+
+## Descubrimientos
+[Información nueva]
+
+## Problemas encontrados
+[Problemas]
+
+## Soluciones aplicadas
+[Soluciones]
+
+## Decisiones tomadas
+[Decisiones aceptadas]
+
+## Cambios realizados
+[Modificaciones]
+
+## Alternativas consideradas y descartadas
+[Alternativas]
+
+## Contradicciones detectadas
+[Contradicciones]
+
+## Información pendiente de verificación
+[Información no confirmada]
+
+## Consecuencias para el proyecto
+[Impacto]
+
+## Estado del módulo al finalizar
+[Estado]
+
+## Estado final de la sesión
+[Estado]
+
+## Motivo del cierre
+[Motivo]
+
+## Próximo paso
+[Acción]
+
+## Próximo módulo
+[Si corresponde]
+
+## Estado de transición
+[Transición]
+
+## Referencias
+[Fuentes relacionadas]
+
+
+# 17. HISTORIAL NO DEBE SER UNA COPIA DE LA CONVERSACIÓN
+
+No copiar:
+
+- conversaciones completas;
+- preguntas irrelevantes;
+- respuestas completas;
+- código completo;
+- logs completos;
+- explicaciones innecesarias.
+
+El historial debe conservar la información necesaria para comprender:
+
+QUÉ OCURRIÓ
+
+POR QUÉ OCURRIÓ
+
+QUÉ DECISIÓN SE TOMÓ
+
+QUÉ CONSECUENCIA TUVO
+
+QUÉ DEBE HACERSE DESPUÉS
+
+
+# 18. CONSERVAR DECISIONES
+
+Toda decisión relevante debe registrarse.
+
+Para cada decisión importante indicar:
+
+- decisión;
+- motivo;
+- impacto;
+- estado.
+
+Cuando sea necesario distinguir:
+
+DECIDIDA
+PROPUESTA
+DESCARTADA
+PENDIENTE
+
+
+# 19. CONSERVAR CONTRADICCIONES
+
+Si durante la sesión se detectó una contradicción entre:
+
+- documentación;
+- código;
+- CURRENT;
+- HISTORIAL;
+- requisitos;
+- decisiones;
+
+debe registrarse.
+
+No resolverla silenciosamente.
+
+
+# 20. CONSERVAR BLOQUEOS
+
+Si existe un bloqueo, el HISTORIAL debe explicar:
+
+- qué ocurrió;
+- cuándo fue detectado;
+- qué lo provoca;
+- qué se intentó;
+- qué no funcionó;
+- qué se necesita para resolverlo.
+
+Esto permitirá que otra sesión pueda retomar el problema sin reconstruir toda la conversación.
+
+
+# 21. CONSERVAR EL MOTIVO DEL CIERRE
+
+El historial debe indicar explícitamente por qué terminó la sesión.
+
+Ejemplo:
+
+Motivo del cierre:
+CONTEXTO AGOTADO
+
+Esto no debe interpretarse como:
+
+Módulo completado.
+
+
+# 22. SI EL MÓDULO TERMINÓ
+
+Cuando el módulo realmente haya terminado, registrar:
+
+- criterios cumplidos;
+- resultado;
+- verificaciones realizadas;
+- pendientes residuales;
+- decisiones relevantes;
+- siguiente módulo;
+- transición.
+
+La siguiente sesión deberá recibir la instrucción conceptual:
+
+INICIAR SIGUIENTE MÓDULO
+
+
+# 23. SI EL MÓDULO NO TERMINÓ
+
+Registrar:
+
+- estado EN PROGRESO;
+- trabajo realizado;
+- resultado;
+- pendientes;
+- próximo paso;
+- referencias necesarias.
+
+La siguiente sesión deberá recibir:
+
+CONTINUAR MÓDULO ACTUAL
+
+
+# 24. SI EXISTE BLOQUEO
+
+Registrar:
+
+Estado:
+BLOQUEADO
+
+Transición:
+ESPERAR RESOLUCIÓN DE BLOQUEO
+
+
+# 25. VERIFICACIÓN ANTES DE GENERAR
+
+Antes de finalizar los documentos realiza internamente esta comprobación:
+
+[ ] ¿Identifiqué correctamente el proyecto?
+
+[ ] ¿Identifiqué el módulo correcto?
+
+[ ] ¿Diferencié sesión y módulo?
+
+[ ] ¿Determiné correctamente el motivo del cierre?
+
+[ ] ¿Separé realizado de propuesto?
+
+[ ] ¿Separé decidido de pendiente?
+
+[ ] ¿Registré los resultados reales?
+
+[ ] ¿Registré los pendientes?
+
+[ ] ¿Registré bloqueos?
+
+[ ] ¿Registré decisiones?
+
+[ ] ¿Registré contradicciones?
+
+[ ] ¿Determiné si el módulo continúa o terminó?
+
+[ ] ¿Definí correctamente el próximo paso?
+
+[ ] ¿Definí el estado de transición?
+
+[ ] ¿Actualicé CURRENT sin convertirlo en historial?
+
+[ ] ¿Generé HISTORIAL sin sobrescribir información anterior?
+
+[ ] ¿Evité inventar información?
+
+[ ] ¿Las referencias permiten continuar?
+
+
+# 26. REGLA DE CONSISTENCIA
+
+Antes de entregar los documentos compara:
+
+CURRENT actualizado
+vs.
+HISTORIAL generado
+
+Ambos deben ser consistentes.
+
+CURRENT representa el estado final.
+
+HISTORIAL explica cómo se llegó a ese estado.
+
+Si existe una diferencia:
+
+- identificarla;
+- corregirla si existe evidencia;
+- si no existe evidencia suficiente, registrarla como incertidumbre.
+
+
+# 27. REGLA DE REFERENCIAS
+
+Cuando sea necesario continuar el trabajo, indicar las fuentes que deberá consultar la siguiente sesión.
+
+Las referencias pueden incluir:
+
+- documentación;
+- código;
+- CURRENT;
+- HISTORIAL;
+- archivos;
+- configuraciones;
+- especificaciones;
+- decisiones previas.
+
+No copiar grandes cantidades de contenido cuando basta con indicar dónde se encuentra.
+
+
+# 28. NO MODIFICAR EL CÓDIGO
+
+Este prompt genera información de continuidad.
+
+No debe modificar código salvo que el usuario lo solicite expresamente como parte de la tarea de cierre.
+
+El objetivo principal es preservar el estado.
+
+
+# 29. NO MODIFICAR LA DOCUMENTACIÓN
+
+No modificar documentación del proyecto únicamente para generar CURRENT o HISTORIAL.
+
+Si se detecta una necesidad de actualización documental:
+
+registrarla como:
+
+PENDIENTE
 
 o:
 
-\> No aplica.
-
-o:
-
-\> No definido.
+ADVERTENCIA
 
 según corresponda.
 
-NO inventes contenido para llenar una sección.
 
-\---
+# 30. RESULTADO FINAL
 
-\# 11\. VALIDACIÓN ANTES DE ENTREGAR
+Al terminar el análisis debes producir DOS RESULTADOS:
 
-Antes de generar los documentos verifica:
+1. `CURRENT.md`
+2. registro de `HISTORIAL`
 
-\#\#\# CURRENT.md
+Ambos deben estar listos para ser almacenados en el repositorio correspondiente.
 
-\[ \] Representa el estado real al finalizar la sesión.
 
-\[ \] Conserva información válida del CURRENT anterior.
+# 31. REGLA DE PRIORIDAD
 
-\[ \] Registra el último trabajo realizado.
+Si existe conflicto entre una suposición de la conversación y evidencia verificable:
 
-\[ \] Registra el resultado real.
+priorizar la evidencia.
 
-\[ \] Registra los pendientes.
+Orden conceptual:
 
-\[ \] Registra los bloqueos.
+Evidencia del código
++
+Documentación vigente
++
+Estado documental
++
+Conversación
 
-\[ \] Registra el próximo paso cuando esté definido.
+Cuando exista una contradicción no suficientemente resuelta:
 
-\[ \] Registra advertencias relevantes.
+registrarla.
 
-\[ \] Registra decisiones recientes.
 
-\[ \] Incluye contexto de continuidad cuando sea necesario.
+# 32. PRINCIPIO DE MÍNIMA PÉRDIDA
 
-\[ \] Incluye referencias cuando sean útiles.
+El objetivo del cierre no es producir documentos largos.
 
-\[ \] No contiene información inventada.
+El objetivo es garantizar que la siguiente sesión pueda continuar sin perder información relevante.
 
-\#\#\# HISTORIAL
+Por lo tanto:
 
-\[ \] Corresponde únicamente a esta sesión.
+No conservar ruido.
 
-\[ \] Registra el objetivo.
+No conservar conversaciones irrelevantes.
 
-\[ \] Registra el estado inicial.
+No conservar contenido duplicado innecesariamente.
 
-\[ \] Registra el trabajo realizado.
+Conservar:
 
-\[ \] Registra descubrimientos.
+- estado;
+- decisiones;
+- resultados;
+- pendientes;
+- bloqueos;
+- razones;
+- consecuencias;
+- transición;
+- referencias.
 
-\[ \] Registra problemas.
 
-\[ \] Registra soluciones reales.
+# 33. PRINCIPIO FINAL
 
-\[ \] Registra decisiones.
+Al cerrar una sesión recuerda:
 
-\[ \] Registra cambios realizados.
+CURRENT.md
+→ dónde quedamos.
 
-\[ \] Registra alternativas descartadas.
+HISTORIAL
+→ por qué llegamos hasta ahí.
 
-\[ \] Registra contradicciones.
+Universal 04
+→ define cómo deben estructurarse ambos.
 
-\[ \] Registra información pendiente de verificación.
+Universal 05
+→ determina cuándo debe prepararse la continuidad.
 
-\[ \] Registra consecuencias.
+Este prompt
+→ ejecuta el cierre y genera los documentos.
 
-\[ \] Registra el estado final.
+Prompt de Continuidad
+→ recupera el estado y permite comenzar la siguiente sesión.
 
-\[ \] Registra referencias relevantes.
+La regla fundamental es:
 
-\[ \] No contiene información inventada.
+FIN DE SESIÓN
+≠
+FIN DE MÓDULO
 
-\# 12\. FORMATO DE RESPUESTA
+Si terminó el contexto:
 
-Entrega exactamente DOS bloques Markdown independientes.
+→ preservar
+→ cerrar
+→ continuar posteriormente el mismo módulo.
 
-PRIMERO:
+Si terminó el módulo:
 
-\`\`\`markdown  
-\# CURRENT
-
-...
-
-SEGUNDO:
-
-\# HISTORIAL — \[Identificador o fecha\]
-
-...
-
-No mezcles los documentos.
-
-No agregues información externa.
-
-No agregues explicaciones dentro de los documentos que no correspondan a sus estructuras.
-
-Genera ahora ambos documentos.
-
-\#\#\# El resultado del sistema queda así
-
-\`\`\`text  
-                    SESIÓN  
-                      │  
-                      ▼  
-              Trabajo realizado  
-                      │  
-                      ▼  
-             PROMPT DE CIERRE  
-                      │  
-             ┌────────┴────────┐  
-             ▼                 ▼  
-        CURRENT.md         HISTORIAL  
-             │                 │  
-        ¿Dónde estamos?   ¿Qué ocurrió?  
-             │             ¿Por qué?  
-             │                 │  
-             └────────┬────────┘  
-                      ▼  
-                   GITHUB  
-                      │  
-                      ▼  
-                 NUEVO CHAT  
-                      │  
-                      ▼  
-             PROMPT CONTINUIDAD  
-                      │  
-                      ▼  
-             Recuperación de  
-                  contexto  
+→ preservar
+→ cerrar
+→ iniciar el siguiente módulo.
