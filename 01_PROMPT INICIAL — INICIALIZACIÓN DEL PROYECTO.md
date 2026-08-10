@@ -41,15 +41,15 @@ Cuando cualquier instrucción posterior haga referencia a una fuente, utiliza el
 
 \#\#\# FUENTE 01 — PROMPTS UNIVERSALES
 
-https://github.com/tumobilamigo-beep/TMA_Docs/tree/8a290598e5ad2a5d65873396312da39c541a3628/Promts%20Universales
+https://github.com/tumobilamigo-beep/TMA_Docs/tree/9344d0dba4c4c5cdea8d30b9828c188e1877cddb/Promts%20Universales
 
 \#\#\# FUENTE 02 — ÁRBOL DE DOCUMENTACIÓN
 
-https://github.com/tumobilamigo-beep/TMA_Docs/tree/0e5fba4369e155968e40a41a71ee369930e41553/Arbol%20de%20documentaci%C3%B3n
+https://github.com/tumobilamigo-beep/TMA_Docs/tree/9344d0dba4c4c5cdea8d30b9828c188e1877cddb/Arbol%20de%20documentaci%C3%B3n
 
 \#\#\# FUENTE 03 — GOBIERNO DEL PROYECTO
 
-https://github.com/tumobilamigo-beep/TMA_Docs/tree/a8ab05166c5afb51d7200ae85819d5a53e76cfb2/Arbol%20de%20documentaci%C3%B3n/00_Gobierno_Proyecto
+https://github.com/tumobilamigo-beep/TMA_Docs/tree/9344d0dba4c4c5cdea8d30b9828c188e1877cddb/Arbol%20de%20documentaci%C3%B3n/00_Gobierno_Proyecto
 
 \#\#\# FUENTE 04 — CÓDIGO DEL PROYECTO
 
@@ -57,7 +57,7 @@ https://github.com/tumobilamigo-beep/TMA_Docs/tree/a8ab05166c5afb51d7200ae85819d
 
 \#\#\# FUENTE 05 — CONTEXTO
 
-https://github.com/tumobilamigo-beep/TMA_Docs/tree/0256136bcc0d78524f0461d6e993a64b2f4c0aaa/CONTEXTO
+https://github.com/tumobilamigo-beep/TMA_Docs/tree/9344d0dba4c4c5cdea8d30b9828c188e1877cddb/CONTEXTO
 
 \#\#\# FUENTE 06 — OTRAS FUENTES
 
