@@ -33,7 +33,7 @@ Utiliza las referencias numéricas posteriormente.
 
 \#\#\# FUENTE 01 — PROMPTS UNIVERSALES
 
-\[PEGAR AQUÍ EL LINK DE LOS PROMPTS UNIVERSALES\]
+https://github.com/tumobilamigo-beep/TMA_Docs/tree/c378a0b56e4172131fbf602ee844cb34b5f6a23f/Promts%20Universales
 
 \#\#\# FUENTE 02 — ÁRBOL DE DOCUMENTACIÓN
 
