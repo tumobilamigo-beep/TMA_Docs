@@ -37,11 +37,11 @@ https://github.com/tumobilamigo-beep/TMA_Docs/tree/c378a0b56e4172131fbf602ee844c
 
 \#\#\# FUENTE 02 — ÁRBOL DE DOCUMENTACIÓN
 
-\[PEGAR AQUÍ EL LINK DEL ÁRBOL DE DOCUMENTACIÓN\]
+https://github.com/tumobilamigo-beep/TMA_Docs/tree/0e5fba4369e155968e40a41a71ee369930e41553/Arbol%20de%20documentaci%C3%B3n
 
 \#\#\# FUENTE 03 — GOBIERNO DEL PROYECTO
 
-\[PEGAR AQUÍ EL LINK DIRECTO A 00\_Gobierno\_Proyecto\]
+https://github.com/tumobilamigo-beep/TMA_Docs/tree/a8ab05166c5afb51d7200ae85819d5a53e76cfb2/Arbol%20de%20documentaci%C3%B3n/00_Gobierno_Proyecto
 
 \#\#\# FUENTE 04 — CÓDIGO DEL PROYECTO
 
@@ -49,7 +49,7 @@ https://github.com/tumobilamigo-beep/TMA_Docs/tree/c378a0b56e4172131fbf602ee844c
 
 \#\#\# FUENTE 05 — CONTEXTO
 
-\[PEGAR AQUÍ EL LINK DE LA CARPETA O UBICACIÓN DEL CONTEXTO\]
+https://github.com/tumobilamigo-beep/TMA_Docs/tree/0256136bcc0d78524f0461d6e993a64b2f4c0aaa/CONTEXTO
 
 \#\#\# FUENTE 06 — HISTORIAL
 
