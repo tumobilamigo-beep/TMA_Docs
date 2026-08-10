@@ -53,11 +53,11 @@ https://github.com/tumobilamigo-beep/TMA_Docs/tree/0256136bcc0d78524f0461d6e993a
 
 \#\#\# FUENTE 06 — HISTORIAL
 
-\[PEGAR AQUÍ EL LINK O UBICACIÓN DEL HISTORIAL DEL PROYECTO\]
+https://github.com/tumobilamigo-beep/TMA_Docs/tree/b30b2ac124ab837130f4c1ab996f51e7afad83cd/CONTEXTO/Historial
 
 \#\#\# FUENTE 07 — CURRENT.md
 
-\[PEGAR AQUÍ EL LINK O UBICACIÓN DE CURRENT.md\]
+https://github.com/tumobilamigo-beep/TMA_Docs/blob/b30b2ac124ab837130f4c1ab996f51e7afad83cd/CONTEXTO/Current.md
 
 \# 2\. IDENTIFICACIÓN DE LA SESIÓN
 
