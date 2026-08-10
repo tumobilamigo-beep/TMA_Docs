@@ -1,471 +1,802 @@
-\# PROMPT DE CONTINUIDAD — REINICIO DE CHAT DEL PROYECTO
+# PROMPT DE CONTINUIDAD — REINICIO DE CHAT DEL PROYECTO
 
-\#\# PROPÓSITO
+## PROPÓSITO
 
-Este prompt se utiliza cuando se debe continuar un proyecto existente desde un NUEVO CHAT.
+Este prompt se utiliza al iniciar una NUEVA SESIÓN de un proyecto existente.
 
-El chat anterior puede haber finalizado por:
+Su objetivo es recuperar correctamente el estado persistente del proyecto y continuar el trabajo sin depender de la memoria de la conversación anterior.
 
-\- límite de tokens;  
-\- límite de contexto;  
-\- conversación demasiado extensa;  
-\- cierre de sesión;  
-\- cambio de modelo;  
-\- cambio de IA;  
-\- finalización manual del chat;  
-\- cualquier otra circunstancia que obligue a iniciar una nueva conversación.
+La nueva sesión debe reconstruir el contexto utilizando las fuentes persistentes del proyecto.
 
-Este NO es el inicio de un proyecto nuevo.
+Las fuentes principales son:
 
-El proyecto ya existe y tiene documentación, código, contexto, historial y un estado actual registrado.
+GitHub
+→ fuente de verdad
 
-Tu objetivo es:
+Documentación
+→ cómo debe funcionar
 
-\> RECUPERAR EL ESTADO DEL PROYECTO Y CONTINUAR EXACTAMENTE DESDE EL PUNTO DONDE FINALIZÓ EL CHAT ANTERIOR.
+Código
+→ cómo funciona realmente
 
-\# 1\. FUENTES DEL PROYECTO
+CURRENT.md
+→ dónde quedamos
 
-Todas las fuentes necesarias para recuperar el proyecto están definidas aquí.
+HISTORIAL
+→ por qué llegamos hasta ahí
 
-No vuelvas a solicitar estos enlaces si ya están disponibles.
 
-Utiliza las referencias numéricas posteriormente.
+# 1. PRINCIPIO FUNDAMENTAL
 
-\#\#\# FUENTE 01 — PROMPTS UNIVERSALES
+No comenzar inmediatamente a trabajar sobre el proyecto.
+
+Primero debes recuperar y verificar el contexto.
+
+La nueva sesión debe determinar:
+
+- qué proyecto está trabajando;
+- qué documentación corresponde;
+- cuál es el módulo actual;
+- cuál era el estado del módulo;
+- qué trabajo ya fue realizado;
+- qué quedó pendiente;
+- qué bloqueos existen;
+- por qué terminó la sesión anterior;
+- cuál es el próximo paso;
+- si debe continuar el módulo actual;
+- si debe iniciar el siguiente módulo.
+
+
+# 2. FUENTES DEL PROYECTO
+
+Los enlaces proporcionados al iniciar esta sesión deben considerarse las referencias oficiales del proyecto.
+
+Normalmente existirán estas ubicaciones principales:
+
+### FUENTE 01 — PROMPTS UNIVERSALES
 
 https://github.com/tumobilamigo-beep/TMA_Docs/tree/c378a0b56e4172131fbf602ee844cb34b5f6a23f/Promts%20Universales
 
-\#\#\# FUENTE 02 — ÁRBOL DE DOCUMENTACIÓN
+### FUENTE 02 — ÁRBOL DE DOCUMENTACIÓN
 
 https://github.com/tumobilamigo-beep/TMA_Docs/tree/0e5fba4369e155968e40a41a71ee369930e41553/Arbol%20de%20documentaci%C3%B3n
 
-\#\#\# FUENTE 03 — GOBIERNO DEL PROYECTO
+### FUENTE 03 — GOBIERNO DEL PROYECTO
 
 https://github.com/tumobilamigo-beep/TMA_Docs/tree/a8ab05166c5afb51d7200ae85819d5a53e76cfb2/Arbol%20de%20documentaci%C3%B3n/00_Gobierno_Proyecto
 
-\#\#\# FUENTE 04 — CÓDIGO DEL PROYECTO
+### FUENTE 04 — CÓDIGO DEL PROYECTO
 
-\[PEGAR AQUÍ EL LINK DEL REPOSITORIO DEL CÓDIGO\]
+[PEGAR AQUÍ EL LINK DEL REPOSITORIO DEL CÓDIGO]
 
-\#\#\# FUENTE 05 — CONTEXTO
+### FUENTE 05 — CONTEXTO
 
 https://github.com/tumobilamigo-beep/TMA_Docs/tree/0256136bcc0d78524f0461d6e993a64b2f4c0aaa/CONTEXTO
 
-\#\#\# FUENTE 06 — HISTORIAL
+### FUENTE 06 — HISTORIAL
 
 https://github.com/tumobilamigo-beep/TMA_Docs/tree/b30b2ac124ab837130f4c1ab996f51e7afad83cd/CONTEXTO/Historial
 
-\#\#\# FUENTE 07 — CURRENT.md
+### FUENTE 07 — CURRENT.md
 
 https://github.com/tumobilamigo-beep/TMA_Docs/blob/b30b2ac124ab837130f4c1ab996f51e7afad83cd/CONTEXTO/Current.md
 
-\# 2\. IDENTIFICACIÓN DE LA SESIÓN
+No volver a solicitar estos enlaces si ya fueron proporcionados dentro del prompt.
 
-Esta conversación corresponde a una:
+Utilizarlos como referencias durante toda la sesión.
 
-\> SESIÓN DE CONTINUIDAD
 
-El chat anterior ya contiene trabajo realizado.
+# 3. UBICACIÓN DE LA INFORMACIÓN DEL PROYECTO
 
-Por lo tanto, NO debes comportarte como si fuera el primer chat del proyecto.
+Toda la información específica del proyecto se encuentra dentro del:
 
-\# 3\. NO REINICIAR EL PROYECTO
+Árbol de Documentación
 
-NO debes:
+Dentro de este árbol existe la carpeta:
 
-\- ejecutar nuevamente el Prompt Inicial;  
-\- comenzar desde el Prompt Universal 01;  
-\- reconstruir el proyecto desde cero;  
-\- asumir que no existe trabajo previo;  
-\- pedir nuevamente información que ya esté documentada;  
-\- solicitar nuevamente los enlaces definidos en el numeral 1\.
+Gobierno_Proyecto
 
-El proyecto ya fue inicializado anteriormente.
+Esta carpeta contiene la información global específica que la IA necesita para comprender:
 
-Debes recuperar su estado.
+- qué es el proyecto;
+- qué se pretende construir;
+- objetivos;
+- alcance;
+- reglas;
+- arquitectura;
+- decisiones generales;
+- información necesaria para gobernar el proyecto.
 
-\# 4\. PROMPT UNIVERSAL DE CONTINUIDAD
+Los demás módulos contienen la información específica correspondiente a cada fase.
 
-Accede a:
 
-FUENTE 01 — PROMPTS UNIVERSALES
+# 4. NO CARGAR TODO INNECESARIAMENTE
 
-Localiza específicamente:
+No es obligatorio leer nuevamente toda la documentación histórica del proyecto.
 
-\> PROMPT UNIVERSAL 04 — CONTINUIDAD Y GESTIÓN DE \`CURRENT.md\`
+Primero debes identificar qué información es necesaria para continuar.
 
-Este es el procedimiento que debes utilizar para recuperar el estado del proyecto.
+Utilizar:
 
-Debes leerlo completamente y seguir sus instrucciones.
+CURRENT.md
+→ para determinar dónde estamos.
 
-NO sustituyas el procedimiento del Universal 04 por uno creado por ti.
+Después consultar:
 
-NO improvises otro método de recuperación de contexto.
+documentación del módulo actual
+→ para determinar qué debe hacerse.
 
-\# 5\. ORDEN DE RECUPERACIÓN
+Después consultar:
 
-Utiliza el procedimiento establecido por:
+código relevante
+→ para determinar qué existe realmente.
 
-\> PROMPT UNIVERSAL 04 — CONTINUIDAD Y GESTIÓN DE \`CURRENT.md\`
+Consultar HISTORIAL
+→ para comprender decisiones o situaciones que CURRENT.md no explique suficientemente.
 
-Como principio general, las fuentes cumplen las siguientes funciones:
 
-PROMPTS UNIVERSALES  
-→ indican CÓMO trabajar.
+# 5. ORDEN DE RECUPERACIÓN
 
-GOBIERNO DEL PROYECTO  
-→ indica QUÉ proyecto estamos construyendo y cuáles son sus reglas generales.
+Utilizar el siguiente orden:
 
-DOCUMENTACIÓN  
-→ indica CÓMO DEBE FUNCIONAR.
+1. Identificar el proyecto.
+2. Leer la información relevante de `Gobierno_Proyecto`.
+3. Localizar `CURRENT.md`.
+4. Leer el CURRENT vigente.
+5. Determinar el módulo actual.
+6. Identificar el estado del módulo.
+7. Identificar el motivo del último cierre.
+8. Identificar el estado de transición.
+9. Consultar la documentación específica del módulo.
+10. Consultar el código relevante.
+11. Consultar HISTORIAL cuando sea necesario.
+12. Comparar la información.
+13. Determinar el punto real de continuidad.
 
-CÓDIGO  
-→ indica CÓMO FUNCIONA REALMENTE.
 
-CURRENT.md  
-→ indica DÓNDE QUEDAMOS.
+# 6. CURRENT.md ES EL PUNTO DE ENTRADA
 
-HISTORIAL  
-→ indica POR QUÉ LLEGAMOS HASTA AHÍ.
+`CURRENT.md` debe ser utilizado inicialmente para determinar:
 
-CONTEXTO  
-→ aporta la información contextual que corresponda según el sistema documental.
+¿Dónde quedamos?
 
-\# 6\. CURRENT.md ES EL PUNTO DE PARTIDA
+No asumir que toda la conversación anterior es necesaria.
 
-El objetivo principal de esta sesión es determinar:
+Utilizar CURRENT para identificar:
 
-\> ¿DÓNDE QUEDÓ EL PROYECTO?
+- proyecto;
+- módulo;
+- estado;
+- último trabajo;
+- resultado;
+- pendientes;
+- bloqueos;
+- próximo paso;
+- transición.
 
-Para ello debes consultar:
 
-FUENTE 07 — CURRENT.md
+# 7. VERIFICAR CURRENT
 
-siguiendo las instrucciones del:
+No asumir automáticamente que CURRENT.md es correcto.
 
-PROMPT UNIVERSAL 04\.
+Compararlo con las fuentes relevantes cuando sea necesario:
 
-\# 7\. HISTORIAL
-
-Cuando sea necesario comprender decisiones anteriores, consulta:
-
-FUENTE 06 — HISTORIAL
-
-El historial debe utilizarse para comprender:
-
-\- decisiones tomadas;  
-\- cambios realizados;  
-\- problemas encontrados;  
-\- soluciones aplicadas;  
-\- razones de determinadas decisiones;  
-\- evolución del proyecto.
-
-No debes convertir todo el historial en el contexto activo si CURRENT.md ya contiene la información necesaria.
-
-El historial sirve principalmente para comprender:
-
-\> POR QUÉ EL PROYECTO SE ENCUENTRA EN SU ESTADO ACTUAL.
-
-\# 8\. DOCUMENTACIÓN
-
-Consulta:
-
-FUENTE 02 — ÁRBOL DE DOCUMENTACIÓN
-
-cuando sea necesario verificar cómo debería funcionar una parte del proyecto.
-
-Recuerda:
-
-\> DOCUMENTACIÓN → CÓMO DEBE FUNCIONAR
-
-\# 9\. GOBIERNO DEL PROYECTO
-
-Si necesitas recuperar las reglas generales o la identidad del proyecto, consulta:
-
-FUENTE 03 — GOBIERNO DEL PROYECTO
-
-No es necesario reconstruir toda la información del proyecto si CURRENT.md y el contexto existente ya contienen lo necesario.
-
-Consulta esta fuente cuando sea necesario para resolver una duda o validar una regla general.
-
-\# 10\. CÓDIGO
-
-Cuando sea necesario verificar la implementación real, consulta:
-
-FUENTE 04 — CÓDIGO DEL PROYECTO
-
-Recuerda:
-
-\> CÓDIGO → CÓMO FUNCIONA REALMENTE
-
-No asumas que una funcionalidad documentada ya está implementada.
-
-Tampoco asumas que algo que existe en el código necesariamente está documentado.
-
-\# 11\. COMPARACIÓN DEL ESTADO
-
-Antes de continuar con una nueva tarea debes determinar si existe coherencia entre:
-
-CURRENT.md  
-↓  
-Historial  
-↓  
-Documentación  
-↓  
+CURRENT
+↓
+Documentación
+↓
 Código
+↓
+HISTORIAL
 
-Si existe una diferencia relevante, debes identificarla.
 
-No ocultes contradicciones.
+Si existe una contradicción:
 
-No inventes una solución.
+no ignorarla.
 
-Sigue el procedimiento definido por el PROMPT UNIVERSAL 04\.
+Determinar cuál información puede verificarse.
 
-\# 12\. NO INVENTAR CONTEXTO
 
-Si una información no puede ser determinada mediante las fuentes disponibles:
+# 8. INTERPRETAR EL ESTADO DE TRANSICIÓN
 
-indícalo claramente.
+CURRENT.md puede indicar:
 
-No inventes:
+CONTINUAR MÓDULO ACTUAL
 
-\- decisiones anteriores;  
-\- funcionalidades;  
-\- requisitos;  
-\- arquitectura;  
-\- archivos;  
-\- código;  
-\- avances;  
-\- problemas;  
-\- soluciones;  
-\- prioridades.
+INICIAR SIGUIENTE MÓDULO
 
-Si algo no puede verificarse, indícalo como:
+ESPERAR RESOLUCIÓN DE BLOQUEO
 
-\> NO VERIFICADO
+REQUIERE VERIFICACIÓN
 
-\# 13\. NO MODIFICAR EL ESTADO DURANTE LA RECUPERACIÓN
 
-Durante la recuperación inicial NO debes modificar:
+La nueva sesión debe respetar esta transición salvo que exista evidencia verificable que demuestre que el estado cambió.
 
-\- código;  
-\- documentación;  
-\- CURRENT.md;  
-\- historial;  
-\- arquitectura;  
-\- configuración.
 
-Primero debes comprender el estado existente.
+# 9. CONTINUAR MÓDULO ACTUAL
 
-Las modificaciones solamente deben realizarse después de que el usuario indique la tarea que desea continuar.
+Si CURRENT indica:
 
-\# 14\. DETERMINAR EL PUNTO EXACTO DE CONTINUACIÓN
+CONTINUAR MÓDULO ACTUAL
 
-Una vez ejecutado el procedimiento del:
+debes:
 
-PROMPT UNIVERSAL 04
+1. identificar el módulo;
+2. leer la documentación correspondiente;
+3. revisar el último trabajo realizado;
+4. revisar pendientes;
+5. revisar bloqueos;
+6. revisar el código relevante;
+7. determinar el próximo paso;
+8. continuar desde ese punto.
 
-debes determinar:
+NO reiniciar el módulo desde cero.
 
-1\. Qué se estaba construyendo.  
-2\. Qué se terminó.  
-3\. Qué estaba en progreso.  
-4\. Qué quedó pendiente.  
-5\. Qué problema estaba siendo tratado.  
-6\. Cuál fue la última decisión tomada.  
-7\. Cuál es el siguiente paso definido.  
-8\. Si existe alguna condición o bloqueo.  
-9\. Qué archivos o partes del código estaban involucrados.  
-10\. Qué documentación debe consultarse para continuar.
 
-\# 15\. NO ADELANTARSE
+# 10. INICIAR SIGUIENTE MÓDULO
 
-Después de recuperar el contexto NO debes comenzar automáticamente una nueva implementación.
+Si CURRENT indica:
 
-Primero debes informar brevemente que recuperaste el estado y cuál es el punto de continuación.
+INICIAR SIGUIENTE MÓDULO
 
-Después espera la instrucción del usuario.
+debes:
 
-Si CURRENT.md establece claramente cuál era la tarea en curso, puedes indicarla como:
+1. confirmar que el módulo anterior realmente está COMPLETADO;
+2. identificar el siguiente módulo según el Árbol de Documentación;
+3. localizar su documentación;
+4. leer la información específica necesaria;
+5. identificar los requisitos de entrada;
+6. revisar dependencias;
+7. revisar el código relacionado;
+8. determinar el primer paso del nuevo módulo.
 
-\> ÚLTIMA TAREA REGISTRADA
+No asumir que el siguiente módulo puede comenzar sin verificar sus dependencias.
 
-pero NO debes asumir que el usuario desea modificar algo diferente.
 
-\# 16\. SI CURRENT.md ESTÁ DESACTUALIZADO
+# 11. ESPERAR RESOLUCIÓN DE BLOQUEO
 
-Si encuentras que CURRENT.md parece no coincidir con:
+Si CURRENT indica:
 
-\- el historial;  
-\- la documentación;  
-\- el código;
+ESPERAR RESOLUCIÓN DE BLOQUEO
 
-no lo corrijas automáticamente durante esta fase.
+debes:
 
-Informa la diferencia.
+1. identificar el bloqueo;
+2. consultar el HISTORIAL correspondiente;
+3. consultar documentación y código relevantes;
+4. determinar si el bloqueo continúa;
+5. si continúa, no avanzar artificialmente;
+6. si fue resuelto, actualizar el estado correspondiente antes de continuar.
 
-Después sigue el procedimiento indicado por el:
 
-PROMPT UNIVERSAL 04\.
+# 12. REQUIERE VERIFICACIÓN
 
-\# 17\. SI EL CHAT ANTERIOR TERMINÓ POR LÍMITE DE TOKENS
+Si CURRENT indica:
 
-Si esta sesión comenzó porque el chat anterior alcanzó el límite de contexto o tokens:
+REQUIERE VERIFICACIÓN
 
-NO intentes recuperar el contenido completo del chat anterior.
+debes identificar qué información requiere verificación.
 
-El propósito del sistema documental es precisamente evitar depender del contenido del chat anterior.
+Consultar las fuentes correspondientes:
 
-Utiliza:
+- documentación;
+- código;
+- historial;
+- requisitos;
+- configuración.
 
-CURRENT.md  
-\+  
-Historial  
-\+  
-Documentación  
-\+  
-Código  
-\+  
-Contexto
+No asumir que la información es correcta hasta verificarla.
 
-según el procedimiento establecido por el Universal 04\.
 
-\# 18\. SI EL CHAT ANTERIOR TERMINÓ NORMALMENTE
+# 13. RELACIÓN CON HISTORIAL
 
-El procedimiento es exactamente el mismo.
+HISTORIAL no debe utilizarse automáticamente como sustituto de CURRENT.
 
-No importa si el chat anterior terminó por:
+Su función es explicar:
 
-\- tokens;  
-\- contexto;  
-\- cierre;  
-\- cambio de modelo;  
-\- decisión del usuario.
+- decisiones;
+- problemas;
+- descubrimientos;
+- cambios;
+- soluciones;
+- contradicciones;
+- consecuencias.
 
-La nueva sesión siempre debe recuperar el estado documental antes de continuar.
+Consultar HISTORIAL cuando:
 
-\# 19\. RESULTADO ESPERADO
+- CURRENT no sea suficiente;
+- exista una contradicción;
+- una decisión requiera explicación;
+- exista un bloqueo;
+- sea necesario comprender por qué se llegó al estado actual.
 
-Al finalizar la recuperación debes poder responder internamente estas preguntas:
 
-¿QUÉ PROYECTO ES?
+# 14. NO RECONSTRUIR TODO EL HISTORIAL
 
-¿QUÉ ESTAMOS CONSTRUYENDO?
+No leer innecesariamente todo el historial del proyecto.
 
-¿CUÁL ES EL ESTADO ACTUAL?
+Priorizar:
+
+1. historial relacionado con el módulo actual;
+2. historial relacionado con el último cambio;
+3. historial relacionado con decisiones que afectan la continuidad;
+4. historial relacionado con bloqueos.
+
+Expandir la consulta solamente cuando sea necesario.
+
+
+# 15. RELACIÓN CON EL CÓDIGO
+
+La documentación indica:
+
+cómo debería funcionar.
+
+El código indica:
+
+cómo funciona realmente.
+
+Antes de continuar una implementación:
+
+consultar el código relevante cuando sea necesario.
+
+No asumir que una funcionalidad está implementada solamente porque la documentación indique que debería existir.
+
+
+# 16. RELACIÓN CON LA DOCUMENTACIÓN
+
+La documentación específica del módulo determina:
+
+- objetivos;
+- requisitos;
+- comportamiento esperado;
+- restricciones;
+- dependencias;
+- criterios de finalización.
+
+La documentación tiene prioridad sobre suposiciones derivadas de conversaciones anteriores.
+
+
+# 17. VERIFICACIÓN DEL ESTADO REAL
+
+Después de revisar las fuentes, determinar:
+
+### Estado documental
+¿Qué debería existir?
+
+### Estado del código
+¿Qué existe realmente?
+
+### Estado operativo
+¿Dónde quedó el trabajo?
+
+### Estado histórico
+¿Por qué se llegó a ese punto?
+
+Si todos son coherentes:
+
+continuar.
+
+Si existen contradicciones:
+
+detener la inferencia automática y determinar qué debe verificarse.
+
+
+# 18. NO INVENTAR CONTINUIDAD
+
+No inventar:
+
+- tareas realizadas;
+- funcionalidades existentes;
+- decisiones;
+- resultados;
+- módulos completados;
+- criterios cumplidos;
+- soluciones;
+- próximos pasos no sustentados.
+
+Si no existe información suficiente:
+
+indicar:
+
+INFORMACIÓN INSUFICIENTE PARA DETERMINAR EL ESTADO
+
+
+# 19. PRIMERA RESPUESTA DEL NUEVO CHAT
+
+Después de analizar las fuentes, NO comenzar inmediatamente con una implementación extensa.
+
+Primero presentar un resumen operativo:
+
+PROYECTO:
+[Nombre]
+
+MÓDULO:
+[Módulo]
+
+ESTADO:
+[Estado]
+
+ÚLTIMO RESULTADO:
+[Resultado]
+
+PENDIENTES:
+[Pendientes]
+
+BLOQUEOS:
+[Si existen]
+
+MOTIVO DEL ÚLTIMO CIERRE:
+[Motivo]
+
+TRANSICIÓN:
+[Continuar / siguiente módulo / bloqueo / verificación]
+
+PRÓXIMO PASO:
+[Acción]
+
+FUENTES CONSULTADAS:
+[Documentación / código / CURRENT / HISTORIAL]
+
+
+# 20. CONFIRMACIÓN DE CONTINUIDAD
+
+Después del resumen anterior, comenzar el trabajo correspondiente según el estado recuperado.
+
+No solicitar al usuario que vuelva a explicar toda la historia del proyecto cuando la información ya esté disponible en las fuentes.
+
+
+# 21. SI EL ÚLTIMO CIERRE FUE POR CONTEXTO
+
+Si CURRENT indica:
+
+Motivo:
+CONTEXTO AGOTADO
+
+y:
+
+Estado del módulo:
+EN PROGRESO
+
+entonces:
+
+NO iniciar un módulo nuevo.
+
+Continuar exactamente desde el módulo actual.
+
+Utilizar los pendientes y el próximo paso registrados en CURRENT.
+
+
+# 22. SI EL ÚLTIMO CIERRE FUE POR FINALIZACIÓN DEL MÓDULO
+
+Si CURRENT indica:
+
+Estado:
+COMPLETADO
+
+y:
+
+Transición:
+INICIAR SIGUIENTE MÓDULO
+
+entonces:
+
+iniciar la recuperación del siguiente módulo.
+
+No volver a desarrollar innecesariamente el módulo anterior.
+
+
+# 23. SI EL CIERRE FUE MANUAL
+
+Determinar el estado real del módulo.
+
+No asumir que estaba terminado.
+
+Utilizar CURRENT, documentación, código e HISTORIAL para establecer la continuidad.
+
+
+# 24. SI EXISTE UN CURRENT ANTIGUO
+
+No asumir que el archivo más recientemente modificado sea necesariamente el correcto.
+
+Verificar:
+
+- contenido;
+- fecha o versión cuando sea relevante;
+- coherencia con historial;
+- coherencia con código;
+- coherencia con documentación.
+
+El contenido debe tener prioridad sobre una simple fecha de modificación.
+
+
+# 25. SI EXISTEN VARIOS REGISTROS DE HISTORIAL
+
+Identificar el historial correspondiente al último estado conocido.
+
+No mezclar automáticamente eventos de diferentes módulos.
+
+Priorizar los registros relacionados con el módulo actual.
+
+
+# 26. GESTIÓN DEL CONTEXTO DURANTE LA NUEVA SESIÓN
+
+Esta sesión debe aplicar las reglas establecidas en:
+
+PROMPT UNIVERSAL 05 — GESTIÓN ACTIVA DEL CONTEXTO
+
+La nueva sesión debe comenzar a vigilar el contexto desde el inicio.
+
+No esperar a que el contexto esté cerca del límite para comenzar la gestión.
+
+
+# 27. NO DUPLICAR EL GESTOR DE CONTEXTO
+
+Este prompt no redefine:
+
+- cálculo de tokens;
+- límites de contexto;
+- porcentajes;
+- estados de consumo.
+
+Esas reglas pertenecen exclusivamente al:
+
+PROMPT UNIVERSAL 05 — GESTIÓN ACTIVA DEL CONTEXTO
+
+
+# 28. CUANDO EL NUEVO CHAT NECESITE CERRAR
+
+Si durante esta nueva sesión el contexto se aproxima a su límite:
+
+utilizar:
+
+PROMPT — CIERRE DE SESIÓN Y GENERACIÓN DE CURRENT.md E HISTORIAL
+
+para preservar el estado.
+
+Después de generar los documentos:
+
+la siguiente sesión volverá a utilizar este PROMPT DE CONTINUIDAD.
+
+
+# 29. TRANSICIÓN ENTRE MÓDULOS
+
+Cuando un módulo esté completado:
+
+CURRENT deberá indicar:
+
+Estado:
+COMPLETADO
+
+y:
+
+Estado de transición:
+INICIAR SIGUIENTE MÓDULO
+
+La siguiente sesión deberá entonces:
+
+1. confirmar el cierre del módulo anterior;
+2. localizar el siguiente módulo;
+3. leer su documentación;
+4. identificar sus dependencias;
+5. revisar el estado del código;
+6. determinar el punto de inicio.
+
+
+# 30. NO SALTAR MÓDULOS
+
+No saltar automáticamente módulos definidos en el Árbol de Documentación.
+
+Si se requiere cambiar el orden:
+
+debe existir una decisión explícita o una regla del proyecto que lo justifique.
+
+Si existe una dependencia que obliga a modificar el orden:
+
+registrarla como decisión.
+
+
+# 31. CAMBIO DE MÓDULO
+
+Al iniciar un nuevo módulo:
+
+identificar explícitamente:
+
+Módulo anterior:
+[Nombre]
+
+Estado:
+COMPLETADO
+
+Nuevo módulo:
+[Nombre]
+
+Objetivo:
+[Objetivo del módulo]
+
+Dependencias:
+[Dependencias]
+
+Documentación:
+[Documentos relevantes]
+
+Código relacionado:
+[Componentes relevantes]
+
+
+# 32. GOBIERNO DEL PROYECTO
+
+Antes de iniciar un módulo nuevo, consultar la información relevante de:
+
+Gobierno_Proyecto
+
+cuando sea necesaria para mantener coherencia con:
+
+- objetivos;
+- alcance;
+- reglas;
+- arquitectura;
+- decisiones globales;
+- restricciones.
+
+
+# 33. PRINCIPIO DE MÍNIMA CARGA DE CONTEXTO
+
+No cargar información innecesaria.
+
+El objetivo es obtener suficiente contexto para trabajar correctamente sin consumir innecesariamente la ventana disponible.
+
+Prioridad:
+
+1. Gobierno_Proyecto cuando sea relevante;
+2. CURRENT;
+3. documentación del módulo;
+4. código relevante;
+5. HISTORIAL relevante;
+6. documentación adicional solamente cuando sea necesaria.
+
+
+# 34. DETECCIÓN DE CONTRADICCIONES
+
+Si encuentras:
+
+CURRENT ≠ HISTORIAL
+
+o:
+
+CURRENT ≠ DOCUMENTACIÓN
+
+o:
+
+DOCUMENTACIÓN ≠ CÓDIGO
+
+o:
+
+HISTORIAL ≠ CÓDIGO
+
+no ocultes la contradicción.
+
+Indica:
+
+CONTRADICCIÓN DETECTADA
+
+y explica:
+
+- fuentes involucradas;
+- diferencia;
+- qué evidencia existe;
+- qué debe verificarse.
+
+
+# 35. NO MODIFICAR DOCUMENTOS DURANTE LA RECUPERACIÓN
+
+La recuperación de contexto no implica automáticamente modificar:
+
+- CURRENT;
+- HISTORIAL;
+- documentación;
+- código.
+
+Primero recuperar y comprender.
+
+Modificar solamente cuando:
+
+- sea parte de la tarea;
+- exista una contradicción que deba corregirse;
+- el usuario lo solicite;
+- o corresponda al flujo definido para una actualización.
+
+
+# 36. RESULTADO ESPERADO
+
+Al finalizar la fase de recuperación, debes poder responder con seguridad:
+
+¿QUÉ PROYECTO ESTAMOS TRABAJANDO?
+
+¿EN QUÉ MÓDULO ESTAMOS?
+
+¿CUÁL ES EL ESTADO REAL?
 
 ¿QUÉ SE HIZO?
 
-¿QUÉ SE DECIDIÓ?
+¿QUÉ RESULTADO SE OBTUVO?
 
-¿POR QUÉ SE DECIDIÓ?
+¿QUÉ QUEDÓ PENDIENTE?
 
-¿QUÉ ESTÁ PENDIENTE?
+¿EXISTEN BLOQUEOS?
 
-¿QUÉ ESTABA HACIÉNDOSE CUANDO TERMINÓ EL CHAT ANTERIOR?
+¿POR QUÉ TERMINÓ LA SESIÓN ANTERIOR?
 
-¿CUÁL ES EL SIGUIENTE PASO?
+¿DEBEMOS CONTINUAR EL MÓDULO?
 
-¿QUÉ DOCUMENTACIÓN Y CÓDIGO DEBEN CONSULTARSE?
+¿DEBEMOS INICIAR EL SIGUIENTE?
 
-\# 20\. RESPUESTA DE CONFIRMACIÓN
+¿QUÉ DEBEMOS HACER AHORA?
 
-Después de ejecutar correctamente el procedimiento del Universal 04, responde con un resumen breve utilizando esta estructura:
 
-\#\# CONTEXTO RECUPERADO
+# 37. PRINCIPIO FINAL
 
-\*\*Proyecto:\*\*  
-\[Nombre\]
+La nueva sesión no comienza desde cero.
 
-\*\*Estado actual:\*\*  
-\[Estado\]
+Comienza desde el estado persistente del proyecto.
 
-\*\*Última tarea registrada:\*\*  
-\[Tarea\]
+La recuperación debe seguir:
 
-\*\*Último avance:\*\*  
-\[Avance\]
+GitHub
+↓
+fuente de verdad
 
-\*\*Pendientes:\*\*  
-\[Pendientes\]
+Gobierno_Proyecto
+↓
+contexto global del proyecto
 
-\*\*Bloqueos:\*\*  
-\[Si existen\]
+CURRENT.md
+↓
+dónde quedamos
 
-\*\*Siguiente paso registrado:\*\*  
-\[Siguiente paso\]
+Documentación del módulo
+↓
+cómo debe funcionar
 
-\*\*Fuentes verificadas:\*\*  
-\[Fuentes consultadas\]
+Código
+↓
+cómo funciona realmente
 
-Si existe alguna inconsistencia:
+HISTORIAL
+↓
+por qué llegamos hasta ahí
 
-\#\# INCONSISTENCIAS DETECTADAS
-
-\[Descripción\]
-
-\# 21\. CONTINUACIÓN
-
-Una vez recuperado y confirmado el contexto:
-
-NO reinicies el proyecto.
-
-NO vuelvas a ejecutar los Prompts Universales iniciales.
-
-NO vuelvas a pedir los enlaces.
-
-NO vuelvas a pedir información que ya está documentada.
-
-El proyecto debe continuar desde el estado recuperado.
-
-\# REGLA FINAL
-
-Esta sesión es una continuación de un proyecto existente.
-
-Por lo tanto:
-
-FUENTE 01  
-→ procedimiento de trabajo.
-
-FUENTE 02  
-→ documentación.
-
-FUENTE 03  
-→ gobierno específico del proyecto.
-
-FUENTE 04  
-→ código real.
-
-FUENTE 05  
-→ contexto.
-
-FUENTE 06  
-→ historial.
-
-FUENTE 07  
-→ CURRENT.md.
-
-Primero:
-
-\> LOCALIZA Y EJECUTA EL PROMPT UNIVERSAL 04 — CONTINUIDAD Y GESTIÓN DE \`CURRENT.md\`.
+Estado verificado
+↓
+punto de continuidad
 
 Después:
 
-\> RECUPERA EL ESTADO DEL PROYECTO.
+CONTINUAR MÓDULO ACTUAL
 
-Después:
+o:
 
-\> VERIFICA LA COHERENCIA DEL ESTADO.
+INICIAR SIGUIENTE MÓDULO
 
-Después:
+según corresponda.
 
-\> IDENTIFICA EL PUNTO EXACTO DONDE QUEDÓ EL PROYECTO.
 
-Finalmente:
+# 38. REGLA FUNDAMENTAL DE CONTINUIDAD
 
-\> QUEDA PREPARADO PARA CONTINUAR EL PROYECTO.
+Nunca confundir:
 
-NO comiences una tarea nueva hasta que el usuario indique qué desea hacer.
+FIN DE CHAT
+con
+FIN DE MÓDULO
 
-\*\*CONTINÚA EL PROYECTO DESDE EL ESTADO DOCUMENTADO.\*\*  
+Si terminó el chat por contexto:
+
+→ recuperar CURRENT
+→ continuar el módulo actual.
+
+Si terminó el módulo:
+
+→ verificarlo
+→ consultar el siguiente módulo
+→ iniciar la nueva fase.
+
+El objetivo de este prompt es que el nuevo chat pueda continuar el proyecto exactamente desde donde quedó, sin perder el contexto persistente y sin reconstruir innecesariamente toda la conversación anterior.
