@@ -2123,7 +2123,7 @@ Toda intervención administrativa sobre la red multinivel deberá registrarse co
 
 Versión	Cambio  
 1.0	Creación inicial
-
+Fin del Documento 12 — Sistema Multinivel  
 
 Documento 13 — Trust Score
 
@@ -2599,5 +2599,5 @@ Versión	Cambio
 1.0	Creación inicial
 
 Fin del Documento 14 — Índice de Maduración Financiera (IMF)  
-Fin del Documento 12 — Sistema Multinivel  
+
 
