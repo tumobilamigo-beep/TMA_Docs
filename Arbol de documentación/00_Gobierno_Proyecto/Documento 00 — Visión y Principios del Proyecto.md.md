@@ -1250,4 +1250,226 @@ La implementación técnica detallada de los controles de ciberseguridad se desa
 
 Fin de 03 — Seguridad Maestra  
 
+\*\*04 — Roadmap Estratégico
+
+Versión: 1.0  
+Estado: Aprobado  
+Proyecto: Tu Mobil Amigo V1.0
+
+1\. Objetivo
+
+Definir la hoja de ruta oficial de construcción, crecimiento y evolución de Tu Mobil Amigo V1.0.
+
+Este documento establece el orden de ejecución del proyecto y sirve como referencia para la toma de decisiones estratégicas, técnicas y financieras.
+
+2\. Principio Rector
+
+La construcción del proyecto seguirá el siguiente orden obligatorio:
+
+Arquitectura  
+↓  
+Base de Datos  
+↓  
+Backend  
+↓  
+APK Flutter  
+↓  
+Seguridad  
+↓  
+Pruebas  
+↓  
+Producción
+
+No se permitirá invertir este orden.
+
+3\. Fase 0 — Gobierno del Proyecto
+
+Objetivo:
+
+Construir la documentación maestra.
+
+Entregables:
+
+Visión y Principios.  
+Prompt Maestro.  
+Contexto Maestro.  
+Seguridad Maestra.  
+Roadmap Estratégico.  
+Glosario Corporativo.  
+Decisiones Arquitectónicas.
+
+Estado:
+
+En construcción  
+4\. Fase 1 — Arquitectura
+
+Objetivo:
+
+Diseñar completamente el funcionamiento de la plataforma antes de escribir código.
+
+Entregables:
+
+Arquitectura General.  
+Modelo Operativo.  
+Modelo Financiero.  
+Motor Tarifario.  
+Sistema de Negociación.  
+Sistema Multinivel.  
+Trust Score.  
+IMF.  
+Motor Antifraude.
+
+Resultado esperado:
+
+Cero incertidumbre funcional.  
+5\. Fase 2 — Base de Datos
+
+Objetivo:
+
+Diseñar el modelo de datos completo.
+
+Entregables:
+
+Modelo Conceptual.  
+Modelo Lógico.  
+Modelo Físico.  
+Catálogo de Tablas.  
+Funciones.  
+Triggers.
+
+Resultado esperado:
+
+Base de datos preparada para crecer  
+sin rediseños estructurales.  
+6\. Fase 3 — Backend
+
+Tecnología objetivo:
+
+Supabase  
+PostgreSQL  
+Edge Functions  
+Realtime
+
+Objetivo:
+
+Construir toda la lógica crítica del negocio.
+
+Incluye:
+
+Servicios.  
+Negociación.  
+Wallets.  
+Cashback.  
+Multinivel.  
+Trust Score.  
+IMF.  
+Antifraude.  
+7\. Fase 4 — APK Flutter
+
+Tecnología oficial:
+
+Flutter
+
+Objetivo:
+
+Construir la aplicación principal del ecosistema.
+
+Versiones previstas:
+
+V1  
+Mototaxi.  
+Taxi.  
+V2  
+Mensajería.  
+Domicilios.  
+V3  
+Motocarro.  
+Carga liviana.  
+8\. Fase 5 — Seguridad
+
+Objetivo:
+
+Implementar protección integral.
+
+Incluye:
+
+Device Fingerprint.  
+Trust Score.  
+Antifraude.  
+Detección de multicuentas.  
+Detección de comportamiento anómalo.  
+Auditoría.  
+9\. Fase 6 — Testing
+
+Objetivo:
+
+Validar estabilidad operativa.
+
+Tipos:
+
+Unitarias.  
+Integración.  
+Seguridad.  
+Carga.  
+Realtime.  
+10\. Fase 7 — Producción
+
+Objetivo:
+
+Liberación controlada del ecosistema.
+
+Etapas:
+
+Beta Cerrada
+
+50 usuarios.
+
+Beta Operativa
+
+200 usuarios.
+
+Lanzamiento Ciudad
+
+Santa Marta.
+
+Expansión Regional
+
+Magdalena.
+
+Expansión Nacional
+
+Colombia.
+
+11\. Evolución Estratégica
+
+Después de consolidar movilidad:
+
+Etapa Comercial  
+Supermercados aliados.  
+Talleres aliados.  
+Comercios aliados.  
+Etapa Corporativa  
+Talleres propios.  
+Supermercados propios.  
+Ecosistema comercial Tu Mobil Amigo.
+
+12\. Meta de Largo Plazo
+
+Convertir Tu Mobil Amigo en un ecosistema tecnológico y comercial que combine:
+
+Movilidad.  
+Seguridad.  
+Beneficios económicos.  
+Red multinivel.  
+Comercio aliado.
+
+Manteniendo siempre:
+
+Seguridad  
+\+  
+Trazabilidad  
+\+  
+Sostenibilidad Financiera  
+\+  
+Escalabilidad
 
