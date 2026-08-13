@@ -1,3 +1,5 @@
+**Arquitectura
+
 # **Documento 04 — Arquitectura General**
 
 **Versión:** 1.0  
