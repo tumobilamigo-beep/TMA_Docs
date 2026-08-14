@@ -248,7 +248,9 @@ Tu Mobil Amigo evolucionará progresivamente hacia un ecosistema comercial integ
 
 Todo crecimiento deberá respetar los principios de seguridad, trazabilidad, sostenibilidad financiera y cumplimiento normativo definidos por este documento.
 
-\*\* 01 — Prompt Maestro
+Fin de Documento 00 VISION Y PRINCIPIOS
+
+\*\* Documento 01 — Prompt Maestro
 
 Versión: 1.0  
 Estado: Aprobado  
@@ -516,9 +518,10 @@ Sostenibilidad Financiera
 \+  
 Control Antifraude
 
-Fin de 01 — Prompt Maestro.
+Fin de Documento 01 — Prompt Maestro
 
-\*\* 02 — Contexto Maestro
+
+\*\* Documento 02 — Contexto Maestro
 
 Versión: 1.0  
 Estado: Aprobado  
@@ -872,7 +875,7 @@ Trazabilidad
 \+  
 Sostenibilidad Financiera
 
-Fin de 02 — Contexto Maestro
+Fin de Documento 02 — Contexto Maestro
 
 \*\*Documento 03 — Seguridad Maestra
 
@@ -1250,9 +1253,9 @@ Sostenibilidad Financiera
 
 La implementación técnica detallada de los controles de ciberseguridad se desarrolla en el Documento 32 — Ciberseguridad.
 
-Fin de 03 — Seguridad Maestra  
+Fin de Documento 03 — Seguridad Maestra
 
-\*\*04 — Roadmap Estratégico
+\*\*Documento 04 — Roadmap Estratégico
 
 Versión: 1.0  
 Estado: Aprobado  
@@ -1475,7 +1478,9 @@ Sostenibilidad Financiera
 \+  
 Escalabilidad
 
-\*\*05 — Glosario Corporativo
+Fin de Documento 04 — Roadmap Estratégico
+
+\*\*Documento 05 — Glosario Corporativo
 
 Versión: 1.0  
 Estado: Aprobado  
@@ -1760,9 +1765,9 @@ Actualizar este documento.
 Registrar la decisión en el Documento 06 — Decisiones Arquitectónicas.  
 Mantener trazabilidad histórica del cambio.
 
-Fin del 05 — Glosario Corporativo
+Fin de Documento 05 — Glosario Corporativo
 
-\*\*06 — Decisiones Arquitectónicas
+\*\*Documento 06 — Decisiones Arquitectónicas
 
 Versión: 1.0  
 Estado: Aprobado  
@@ -2425,5 +2430,6 @@ Toda plataforma deberá integrarse con el catálogo definido en el Documento 42A
 
 Registro de Cambios  
 Fecha	Decisión	Estado  
-V1.0	Creación inicial	Activa  
-Fin del Documento 06 — Decisiones Arquitectónicas
+V1.0	Creación inicial	Activa 
+
+Fin del Documento 06 — Decisiones Arquitectónicas 
