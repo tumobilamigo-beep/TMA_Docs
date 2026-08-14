@@ -627,6 +627,8 @@ Registro de Cambios
 Versión	Cambio  
 1.0	Creación inicial
 
+Fin del Documento 16 — Modelo Conceptual  
+
 Documento 17 — Modelo Lógico
 
 Versión: 1.0  
@@ -4458,5 +4460,5 @@ Las particularidades de cada jurisdicción deberán resolverse mediante parametr
 
 Fin de Anexo B — Guía de Modelado de Nuevas Entidades
 
-Fin del Documento 16 — Modelo Conceptual  
+
 
