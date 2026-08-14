@@ -1,6 +1,6 @@
 **Arquitectura
 
-# **Documento 04 — Arquitectura General**
+# **Documento 07 — Arquitectura General**
 
 **Versión:** 1.0  
 **Estado:** Aprobado  
@@ -360,6 +360,9 @@ Toda decisión técnica futura deberá responder a la siguiente pregunta:
 "¿Esta decisión mantiene la seguridad, la trazabilidad, la escalabilidad y la sostenibilidad de Tu Mobil Amigo V1.0?"
 
 Si la respuesta es negativa, la decisión deberá ser rechazada.
+
+Fin de Documento 07 — Arquitectura General
+
 
 Documento 08 — Modelo Operativo
 
